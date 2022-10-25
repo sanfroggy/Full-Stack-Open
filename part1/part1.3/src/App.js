@@ -1,5 +1,5 @@
 const App = () => {
-    const course = 'Half stack application development';
+    const course = 'Half stack application development'
     const part1 = {
         name: 'Fundamentals of React',
         exercises: 10
@@ -26,7 +26,7 @@ const App = () => {
 const Header = (props) => {
     return (
         <h1>{props.course}</h1>
-    );
+    )
 }
 
 const Content = (props) => {
@@ -36,13 +36,13 @@ const Content = (props) => {
         <Part part={props.second} exercises={props.secondnum} />
         <Part part={props.third} exercises={props.thirdnum} />
         </>
-    );
+    )
 }
 
 const Part = (props) => {
     return (
         <p>{props.part}: {props.exercises}</p>
-    );
+    )
 }
 
 const Total = (props) => {
@@ -51,4 +51,4 @@ const Total = (props) => {
     )
 }
 
-export default App;
+export default App

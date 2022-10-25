@@ -1,11 +1,11 @@
 const App = () => {
-    const course = 'Half stack application development';
-    const part1 = 'Fundamentals of React';
-    const exercises1 = 10;
-    const part2 = 'Using props to pass data';
-    const exercises2 = 7;
-    const part3 = 'State of a component';
-    const exercises3 = 14;
+    const course = 'Half stack application development'
+    const part1 = 'Fundamentals of React'
+    const exercises1 = 10
+    const part2 = 'Using props to pass data'
+    const exercises2 = 7
+    const part3 = 'State of a component'
+    const exercises3 = 14
 
     return (
         <div>
@@ -20,7 +20,7 @@ const App = () => {
 const Header = (props) => {
     return (
         <h1>{props.course}</h1>
-    );
+    )
 }
 
 const Content = (props) => {
@@ -30,13 +30,13 @@ const Content = (props) => {
         <Part part={props.second} exercises={props.secondnum} />
         <Part part={props.third} exercises={props.thirdnum} />
         </>
-    );
+    )
 }
 
 const Part = (props) => {
     return (
         <p>{props.part}: {props.exercises}</p>
-    );
+    )
 }
 
 const Total = (props) => {
@@ -45,4 +45,4 @@ const Total = (props) => {
     )
 }
 
-export default App;
+export default App

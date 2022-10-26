@@ -6,7 +6,7 @@ const App = () => {
     const [neutral, setNeutral] = useState(0)
     const [bad, setBad] = useState(0)
     
-    //Handle the click events for eacg button and show feedback statistics
+    //Handle the click events for each button and show feedback statistics
     return (
         <div>
             <h1>Give feedback</h1>

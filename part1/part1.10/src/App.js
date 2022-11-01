@@ -25,6 +25,7 @@ const Statistics = (props) => {
     )
 }
 
+//Define the StatisticsLine component to be used in displaying statistics
 const StatisticsLine = (props) => {
     if (props.text === "Positive: ") {
         return (
@@ -36,7 +37,7 @@ const StatisticsLine = (props) => {
     )
 }
 
-
+//Define the button component to be used for displaying the buttons
 const Button = (props) => {
     return (
         <button onClick={props.handleClick}>

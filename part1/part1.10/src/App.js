@@ -15,17 +15,17 @@ const Statistics = (props) => {
     return (
         <>
             <h1>Statistics</h1>
-            <StaticsticsLine text="Good: " value={props.good} />
-            <StaticsticsLine text="Neutral: " value={props.neutral} />
-            <StaticsticsLine text="Bad: " value={props.bad} />
-            <StaticsticsLine text="All: " value={props.all} />
-            <StaticsticsLine text="Average: " value={props.average} />
-            <StaticsticsLine text="Positive: " value={props.percentage}/>
+            <StatisticsLine text="Good: " value={props.good} />
+            <StatisticsLine text="Neutral: " value={props.neutral} />
+            <StatisticsLine text="Bad: " value={props.bad} />
+            <StatisticsLine text="All: " value={props.all} />
+            <StatisticsLine text="Average: " value={props.average} />
+            <StatisticsLine text="Positive: " value={props.percentage}/>
         </>
     )
 }
 
-const StaticsticsLine = (props) => {
+const StatisticsLine = (props) => {
     if (props.text === "Positive: ") {
         return (
             <p>{props.text} {props.value}%</p>

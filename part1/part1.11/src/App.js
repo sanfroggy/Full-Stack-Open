@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
-//Check if feedback has been given using conditional rendering and if so, show the calculated statistics
+
+/*Check if feedback has been given using conditional rendering and if so, 
+show the calculated statistics in a HTML table*/
 const Statistics = (props) => {
 
     if (props.all === 0) {
@@ -35,10 +37,12 @@ const Statistics = (props) => {
 const StatisticsLine = (props) => {
     if (props.text === "Positive:") {
         return (
+            //Create a row in the table defined in the Statistics component
             <tr><td>{props.text}</td><td>{props.value}%</td></tr>
         )
     }
     return (
+        //Create a row in the table defined in the Statistics component
         <tr><td>{props.text}</td><td>{props.value}</td></tr>
     )
 }

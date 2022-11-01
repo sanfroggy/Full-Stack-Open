@@ -14,7 +14,7 @@ const App = () => {
         setGood(good + 1)
         setAll(all + 1)
         setAverage(((good + 1) - bad) / (all + 1))
-        setPercentage((good + 1) / (all + 1))
+        setPercentage(((good + 1) / (all + 1))*100)
     }
 
     //Add a neutral feedback and calculate the average value and the percentage of positive feedback
@@ -22,7 +22,7 @@ const App = () => {
         setNeutral(neutral + 1)
         setAll(all + 1)
         setAverage((good - bad) / (all + 1))
-        setPercentage(good / (all + 1))
+        setPercentage((good / (all + 1))*100)
     }
 
     //Add a bad feedback and calculate the average value and the percentage of positive feedback
@@ -30,7 +30,7 @@ const App = () => {
         setBad(bad + 1)
         setAll(all + 1)
         setAverage(((good) - (bad + 1)) / (all + 1))
-        setPercentage(good / (all + 1))
+        setPercentage((good / (all + 1))*100)
     }
 
     //Handle the click events for each button and show detailed feedback statistics

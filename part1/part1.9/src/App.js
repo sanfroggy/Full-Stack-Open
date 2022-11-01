@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-//Show the calculated statistics
+//Check if feedback has been given using conditional rendering and if so, show the calculated statistics
 const Statistics = (props) => {
 
     if (props.all === 0) {

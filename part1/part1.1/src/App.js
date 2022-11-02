@@ -10,13 +10,13 @@ const App = () => {
 
     return (
         //Displaying the contents of components
-        <>
+        <div>
             <Header course={course} />
             <Content part={part1} exercises={exercises1} />
             <Content part={part2} exercises={exercises2} />
             <Content part={part3} exercises={exercises3} />
             <Total firstnum={exercises1} secondnum={exercises2} thirdnum={exercises3} />
-        </>
+        </div>
     )
 }
 

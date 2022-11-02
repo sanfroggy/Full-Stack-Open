@@ -6,8 +6,8 @@ const App = () => {
     const [neutral, setNeutral] = useState(0)
     const [bad, setBad] = useState(0)
     
-    //Handle the click events for each button and show feedback statistics
     return (
+        //Handle the click events for each button and show feedback statistics
         <div>
             <h1>Give feedback</h1>
             <button onClick={() => setGood(good + 1)}> Good</button>

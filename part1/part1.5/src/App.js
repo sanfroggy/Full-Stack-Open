@@ -1,4 +1,6 @@
 const App = () => {
+    /*Defining the course as a single object. The properties of this object are to be
+   passed to different components*/
     const course = {
         name: 'Half stack application development',
         parts: [
@@ -18,6 +20,7 @@ const App = () => {
     }
 
     return (
+        //Displaying the contents of components
         <div>
             <Header course={course.name} />
             <Content parts={course.parts} />
@@ -26,12 +29,14 @@ const App = () => {
     )
 }
 
+//Defining the Header component
 const Header = (props) => {
     return (
         <h1>{props.course}</h1>
     )
 }
 
+//Defining the Content component that uses three Part components to display data
 const Content = (props) => {
     return (
         <>
@@ -42,12 +47,14 @@ const Content = (props) => {
     )
 }
 
+//Defining the Part component
 const Part = (props) => {
     return (
         <p>{props.part}: {props.exercises}</p>
     )
 }
 
+//Defining the Total component
 const Total = (props) => {
     return (
         <p>Number of exercises: {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>

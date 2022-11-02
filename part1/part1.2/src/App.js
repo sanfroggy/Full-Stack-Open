@@ -1,4 +1,5 @@
 const App = () => {
+    //Defining the constants to be passed to different components
     const course = 'Half stack application development'
     const part1 = 'Fundamentals of React'
     const exercises1 = 10
@@ -8,6 +9,7 @@ const App = () => {
     const exercises3 = 14
 
     return (
+        //Displaying the contents of components
         <div>
             <Header course={course} />
             <Content first={part1} firstnum={exercises1} second={part2}
@@ -17,12 +19,14 @@ const App = () => {
     )
 }
 
+//Defining the Header component
 const Header = (props) => {
     return (
         <h1>{props.course}</h1>
     )
 }
 
+//Defining the Content component that uses three Part components to display data
 const Content = (props) => {
     return (
         <>
@@ -33,12 +37,14 @@ const Content = (props) => {
     )
 }
 
+//Defining the Part component
 const Part = (props) => {
     return (
         <p>{props.part}: {props.exercises}</p>
     )
 }
 
+//Defining the Total component
 const Total = (props) => {
     return (
         <p>Number of exercises: {props.firstnum + props.secondnum + props.thirdnum}</p>

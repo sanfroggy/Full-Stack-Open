@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 const App = () => {
+    //Define an array of anecdotes
     const anecdotes = [
         'If it hurts, do it more often.',
         'Adding manpower to a late software project makes it later!',
@@ -11,14 +12,18 @@ const App = () => {
         'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when dianosing patients.'
     ]
 
+    //Save the state of the index of the selected anecdote
     const [selected, setSelected] = useState(0)
 
+    /*Set the index of the selected state to a random number in the range of the array, 
+    when the button is pressed*/
     const displayRandom = () => {
         const random = Math.floor(Math.random() * anecdotes.length)
         setSelected(random)
     }
 
     return (
+        //Handle button click events and display the random anecdote
         <>
             <p>{anecdotes[selected]}</p>
             <button onClick={displayRandom}>Next anecdote</button>

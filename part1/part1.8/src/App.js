@@ -46,16 +46,16 @@ const App = () => {
         setPercentage((good / (all + 1)) * 100)
     }
 
-    //Handle the click events for each button and show the component that holds the representation of the Statistics
     return (
-        <div>
+        //Handle the click events for each button and show the component that holds the representation of the Statistics
+        <>
             <h1>Give feedback</h1>
             <button onClick={handleGood} > Good</button>
             <button onClick={handleNeutral}> Neutral</button>
             <button onClick={handleBad}>Bad</button>
             <Statistics good={good} neutral={neutral} bad={bad} 
             all={all} average={average} percentage={percentage} />
-        </div>
+        </>
     )
 }
 

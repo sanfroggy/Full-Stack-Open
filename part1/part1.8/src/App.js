@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 //Show the calculated statistics
 const Statistics = (props) => (
-    <div>
+    <>
         <h1>Statistics</h1>
         <p>Good: {props.good}</p>
         <p>Neutral: {props.neutral}</p>
@@ -10,7 +10,7 @@ const Statistics = (props) => (
         <p>All: {props.all}</p>
         <p>Average: {props.average}</p>
         <p>Positive: {props.percentage} %</p>
-    </div>
+    </>
 )
 
 const App = () => {

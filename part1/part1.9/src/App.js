@@ -5,15 +5,15 @@ const Statistics = (props) => {
 
     if (props.all === 0) {
         return (
-            <div>
+            <>
                 <h1>Statistics</h1>
                 <p>No feedback given.</p>
-            </div>
+            </>
         )
     }
 
     return (
-        <div>
+        <>
             <h1>Statistics</h1>
             <p>Good: {props.good}</p>
             <p>Neutral: {props.neutral}</p>
@@ -21,7 +21,7 @@ const Statistics = (props) => {
             <p>All: {props.all}</p>
             <p>Average: {props.average}</p>
             <p>Positive: {props.percentage} %</p>
-        </div>
+        </>
     )
 }
 
@@ -58,16 +58,16 @@ const App = () => {
         setPercentage((good / (all + 1)) * 100)
     }
 
-    //Handle the click events for each button and show the component that holds the Statistics
     return (
-        <div>
+        //Handle the click events for each button and show the component that holds the Statistics
+        <>
             <h1>Give feedback</h1>
             <button onClick={handleGood} > Good</button>
             <button onClick={handleNeutral}> Neutral</button>
             <button onClick={handleBad}>Bad</button>
             <Statistics good={good} neutral={neutral} bad={bad} 
             all={all} average={average} percentage={percentage} />
-        </div>
+        </>
     )
 }
 

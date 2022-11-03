@@ -1,0 +1,21 @@
+title Untitled
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin->selain: notes(html)
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin->selain: main.css
+note over selain: Selain lähettää GET ja POST pyynnöt palvelimelle.
+note over selain: POST pyyntö lähettää uuden muistiinpanon tiedot palvelimelle.
+note over selain: GET pyynnöt lataavat sivun sisällön (css-tyylit, html lomakkeen)
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin->selain: main.js
+palvelin->selain: data.json
+note over selain: Kun sivun sisältö on ladattu, main.js palauttaa listan, johon on lisätty uusi muistiinpano.
+note over selain: Main.js lähettää GET pyynnön JSON datalle.
+note over palvelin: Palvelin palauttaa pyydetyn JSON data (listan muistiinpanoista).
+note over selain: data.json näyttää palautetun datan selaimessa.
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+

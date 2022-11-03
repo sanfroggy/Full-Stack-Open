@@ -1,0 +1,11 @@
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over selain: Selain lähettää POST pyynnön palvelimelle, joka sisältää uuden muistiinpanon tiedot.
+note over selain: JavaScript koodi lisää musitiinpanon listaan.
+palvelin->selain: 'note created'
+note over palvelin: Palvelin palauttaa 'note created' viestin.
+
+
+
+
+
+

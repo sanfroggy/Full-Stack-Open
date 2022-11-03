@@ -1,0 +1,18 @@
+title Untitled
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+palvelin->selain: spa(html)
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin->selain: main.css
+note over selain: Selain lähettää GET pyynnöt palvelimelle.
+note over selain: GET pyynnöt lataavat sivun sisällön (css-tyylit, html lomakkeen)
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+palvelin->selain: spa.js
+palvelin->selain: data.json
+note over selain: spa.js luo listan muistiinpanoista 'notes' elementtiin.
+note over selain: spa.js lähettää GET pyynnön JSON datalle.
+note over palvelin: Palvelin palauttaa pyydetyn JSON data (listan muistiinpanoista).
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+

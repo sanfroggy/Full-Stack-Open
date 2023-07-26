@@ -1,17 +1,19 @@
-/* Defining the Course component. Also creating a variable for saving 
-the total number of exercises and adding it's value to the Content component.*/
+/* Defining the Course component. Also creating a function for calculating
+the total number of exercises and adding it's return value to the Content component.*/
 const Course = ({ course }) => {
 
-    var sum = 0;
-
-    course.parts.forEach((coursepart) => {
-        sum += coursepart.exercises;
-    });
+    const calculateTotal = () => {
+        var sum = 0
+        course.parts.forEach((coursepart) => {
+            sum += coursepart.exercises
+        })
+        return sum
+    }
 
     return (
         <>
             <Header course={course.name} />
-            <Content parts={course.parts} total={sum} />
+            <Content parts={course.parts} total={calculateTotal()} />
         </>
     )
 }

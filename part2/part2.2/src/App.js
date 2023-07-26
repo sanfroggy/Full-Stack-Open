@@ -1,5 +1,5 @@
 /* Defining the Course component. Also creating a variable for saving 
-the total number of exercises.*/
+the total number of exercises and adding it's value to the Content component.*/
 const Course = ({ course }) => {
 
     var sum = 0;

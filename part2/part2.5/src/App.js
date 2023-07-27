@@ -1,6 +1,5 @@
 import Course from './components/Course'
 
-//Defining the Header component
 const App = () => {
     /*Defining the course as a single object. The properties of this object are to be
    passed to the Course component. */

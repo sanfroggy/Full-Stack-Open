@@ -1,5 +1,5 @@
 /* Defining the Course component. Also creating a function for calculating
-the total number of exercises and adding it's return value to the Content component.*/
+the total number of exercises using reduce and adding it's return value to the Content component.*/
 const Course = ({ course }) => {
 
     const calculateTotal = () => {

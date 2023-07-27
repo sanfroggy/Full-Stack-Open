@@ -18,7 +18,7 @@ const Course = ({ course }) => {
 //Defining the Header component
 const Header = (props) => {
     return (
-        <h1>{props.course}</h1>
+        <h2>{props.course}</h2>
     )
 }
 
@@ -101,6 +101,7 @@ const App = () => {
     return (
         //Displaying the contents of all Course components in courses array.
         <div>
+            <h1>Web Development Curriculum</h1>
             {courses.map(course =>
                 <Course key={course.id} course={course} />
             )}

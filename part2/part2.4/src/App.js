@@ -50,7 +50,7 @@ const Total = (props) => {
 }
 
 const App = () => {
-    /*Defining the course as a single object. The properties of this object are to be
+    /*Defining an array of courses. The properties of this object are to be
    passed to the Course component. */
 
     const courses = [
@@ -99,7 +99,7 @@ const App = () => {
     ]
 
     return (
-        //Displaying the contents of components
+        //Displaying the contents of all Course components in courses array.
         <div>
             {courses.map(course =>
                 <Course key={course.id} course={course} />

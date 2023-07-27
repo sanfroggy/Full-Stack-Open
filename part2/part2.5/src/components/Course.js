@@ -15,6 +15,7 @@ const Course = ({ course }) => {
     )
 }
 
+//Defining the Header component
 const Header = (props) => {
     return (
         <h2>{props.course}</h2>

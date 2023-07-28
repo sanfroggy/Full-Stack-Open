@@ -1,4 +1,4 @@
-//Defining the Person component.
+//Defining the Persons component containing a list of persons.
 const Persons = (props) => {
     return (
         props.contactList.map(person =>
@@ -7,6 +7,7 @@ const Persons = (props) => {
     )
 }
 
+//Defining the Personcomponent containing the information of a single contact.
 const Person = (props) => {
     return (
         <p>{props.name}: {props.number}</p>

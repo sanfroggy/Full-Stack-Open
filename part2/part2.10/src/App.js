@@ -64,7 +64,9 @@ const App = (props) => {
         setNewNumber(event.target.value)
     }
 
-    //Displaying the form components as well as the filtered names and numbers in the persons Array.
+    /*Displaying the Filter, PersonForm and Persons components resulting in a list of 
+    filtered names and numbers of contacts and input fields and buttons 
+    for filtering and adding data. */
     return (
         <div>
             <h2>Phonebook</h2>

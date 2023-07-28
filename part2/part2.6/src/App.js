@@ -33,13 +33,9 @@ const App = (props) => {
         <div>
             <h2>Phonebook</h2>
             <form onSubmit={addPerson}>
-                <div>
-                    Name: <input value={newName} onChange={handleNameInputChange} />
-                </div>
+                Name: <input value={newName} onChange={handleNameInputChange} />
                 <br></br>
-                <div>
-                    <button type="submit">Add</button>
-                </div>
+                <button type="submit">Add</button>
             </form>
             <h2>Numbers</h2>
                 {persons.map(person =>

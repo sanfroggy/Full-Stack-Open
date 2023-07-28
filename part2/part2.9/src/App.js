@@ -18,7 +18,8 @@ const App = (props) => {
     persons Array when the button is pressed and preventing the 
     default behavior that would occur when submitting the form. Also checking
     if the given name is already in persons list and generating an
-    alert if that is true. */
+    alert if that is true. Updating the list of contacts to show as well
+    according to the value of the filter input field. */
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()
@@ -35,6 +36,10 @@ const App = (props) => {
         }
     }
 
+    /*Getting the value of the input field when it is changed
+    and setting it as a new value for the showNames "state variable". Also
+    updating the contactsToShow "state variable" according to filter 
+    input field value. */
     const handleFilterInputChange = (event) => {
         setShowNames(event.target.value)
         setContactsToShow([...persons].filter(contact => contact.name.includes(event.target.value)))
@@ -53,7 +58,7 @@ const App = (props) => {
         setNewNumber(event.target.value)
     }
 
-    //Displaying the form components as well as the names and numbers in the persons Array.
+    //Displaying the form components as well as the filtered names and numbers in the persons Array.
     return (
         <div>
             <h2>Phonebook</h2>

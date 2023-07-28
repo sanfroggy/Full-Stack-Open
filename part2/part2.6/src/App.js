@@ -13,7 +13,7 @@ const App = (props) => {
 
     /*Creating a function to add a new person object to the existing
     persons Array when the button is pressed and preventing the 
-    default behavior that would occur when submitting the form. */ 
+    default behavior that would occur when submitting the form. */
     const addPerson = (event) => {
         event.preventDefault()
         const personObject = {
@@ -35,12 +35,13 @@ const App = (props) => {
             <form onSubmit={addPerson}>
                 Name: <input value={newName} onChange={handleNameInputChange} />
                 <br></br>
+                <br></br>
                 <button type="submit">Add</button>
             </form>
             <h2>Numbers</h2>
-                {persons.map(person =>
-                    <Person key={person.name} name={person.name} />
-                )}
+            {persons.map(person =>
+                <Person key={person.name} name={person.name} />
+            )}
         </div>
     )
 

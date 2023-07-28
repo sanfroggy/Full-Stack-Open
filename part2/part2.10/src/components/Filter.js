@@ -1,3 +1,4 @@
+//Defining the Filter component containing an input field.
 const Filter = (props) => {
     return (
         <div>

@@ -48,7 +48,6 @@ const App = (props) => {
         setShowNames(event.target.value)
         setContactsToShow([...persons].filter(contact => contact.name.toLowerCase().indexOf(
             event.target.value.toLowerCase()) >= 0))
-        //checkFiltered()
     }
 
     /*Getting the value of the input field when it is changed

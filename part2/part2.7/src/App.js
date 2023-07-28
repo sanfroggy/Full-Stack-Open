@@ -19,13 +19,13 @@ const App = (props) => {
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()
-            alert(`${newName} already exists in the list of contacts.`)      
+            alert(`${newName} already exists in the list of contacts.`)
         } else {
             event.preventDefault()
             const personObject = {
                 name: newName
             }
-            setPersons(persons.concat(personObject)) 
+            setPersons(persons.concat(personObject))
         }
     }
 
@@ -43,7 +43,6 @@ const App = (props) => {
                 <div>
                     Name: <input value={newName} onChange={handleNameInputChange} />
                 </div>
-                <br></br>
                 <br></br>
                 <div>
                     <button type="submit">Add</button>

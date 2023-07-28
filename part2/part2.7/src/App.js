@@ -13,7 +13,9 @@ const App = (props) => {
 
     /*Creating a function to add a new person object to the existing
     persons Array when the button is pressed and preventing the 
-    default behavior that would occur when submitting the form. */
+    default behavior that would occur when submitting the form. Also checking
+    if the given name is already in persons list and generating an
+    alert if that is true. */
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()

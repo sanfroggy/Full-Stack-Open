@@ -30,7 +30,7 @@ const App = (props) => {
 
     //Displaying the form components as well as the names in the persons Array.
     return (
-        <div>
+        <>
             <h2>Phonebook</h2>
             <form onSubmit={addPerson}>
                 <div>
@@ -45,7 +45,7 @@ const App = (props) => {
                 {persons.map(person =>
                     <Person key={person.name} name={person.name} />
                 )}
-        </div>
+        </>
     )
 
 }

@@ -7,7 +7,10 @@ const App = (props) => {
     /*Creating "state variables" for the person object to be stored
     and the values currently written on the input fields */
     const [persons, setPersons] = useState([
-        { name: 'Arto Hellas', number: '+358 45 2235689' }
+        { name: 'Arto Hellas', number: '+358 45 2235689' },
+        { name: 'Ada Lovelace', number: '39-44-5323523' },
+        { name: 'Artemis Fowl', number: '12-43-234345' },
+        { name: 'Mary Poppendieck', number: '39-23-6423122' }
     ])
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
@@ -30,9 +33,10 @@ const App = (props) => {
                 name: newName,
                 number: newNumber
             }
-            setContactsToShow([...persons].concat(personObject).filter(contact => contact.name.includes(showNames)))
+            setContactsToShow([...persons].concat(personObject).filter(contact => 
+                contact.name.toLowerCase().indexOf(showNames.toLowerCase()) >= 0))
             setPersons(persons.concat(personObject))
-            
+
         }
     }
 
@@ -42,7 +46,8 @@ const App = (props) => {
     input field value. */
     const handleFilterInputChange = (event) => {
         setShowNames(event.target.value)
-        setContactsToShow([...persons].filter(contact => contact.name.includes(event.target.value)))
+        setContactsToShow([...persons].filter(contact => contact.name.toLowerCase().indexOf(
+            event.target.value.toLowerCase()) >= 0))
         //checkFiltered()
     }
 
@@ -62,11 +67,11 @@ const App = (props) => {
     return (
         <div>
             <h2>Phonebook</h2>
-                <div>
+            <div>
                 Filter names: <input value={showNames} onChange={handleFilterInputChange} />
-                </div>
+            </div>
             <form onSubmit={addPerson}>
-            <h2>Add a new contact: </h2>
+                <h2>Add a new contact: </h2>
                 <div>
                     Name: <input value={newName} onChange={handleNameInputChange} />
                 </div>

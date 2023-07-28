@@ -1,3 +1,5 @@
+/*Defining the PersonForm component containing a form with two input fields and a submit button
+used to add contacts to a list. */
 const PersonForm = (props) => {
     return (
         <form onSubmit={props.addPersonMethod}>

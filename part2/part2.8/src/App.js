@@ -28,6 +28,8 @@ const App = (props) => {
                 number: newNumber
             }
             setPersons(persons.concat(personObject))
+            setNewName('')
+            setNewNumber('')
         }
     }
 

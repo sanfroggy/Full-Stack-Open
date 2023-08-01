@@ -1,4 +1,4 @@
-//Importing useState and the Person component.
+//Importing useState, useEffect as well as the necessary services and components.
 import { useState, useEffect } from 'react'
 import personService from './services/Persons'
 import Persons from './components/Persons'
@@ -16,7 +16,7 @@ const App = (props) => {
     const [contactsToShow, setContactsToShow] = useState([...persons])
 
     /*Getting the data of 4 persons form JSON server on initial render
-    and providing the persons ánd contacts to show arrays with the
+    and providing the persons Ã¡nd contacts to show arrays with the
     received data. */
     useEffect(() => { 
         personService.getAll().then(initialData => {

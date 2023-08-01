@@ -1,4 +1,4 @@
-//Importing useState, useEffect as well as the necessary services and components.
+//Importing useState, useEffect as well as the necessary components.
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Persons from './components/Persons'

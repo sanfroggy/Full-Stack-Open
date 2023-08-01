@@ -29,8 +29,10 @@ const App = (props) => {
     persons Array when the button is pressed and preventing the 
     default behavior that would occur when submitting the form. Also checking
     if the given name is already in persons list and generating an
-    alert if that is true. Updating the list of contacts to show as well
-    according to the value of the filter input field. */
+    alert if that is true. Updating the list of contacts to show
+    according to the value of the filter input field, as well as
+    updating the list of contacts on the JSON server through createContact
+    function defined in personService. */
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()

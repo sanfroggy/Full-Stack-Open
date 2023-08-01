@@ -15,7 +15,7 @@ const App = (props) => {
     const [showNames, setShowNames] = useState('')
     const [contactsToShow, setContactsToShow] = useState([...persons])
 
-    /*Getting the data of 4 contacts from JSON server on initial render
+    /*Getting the data of contacts from JSON server on initial render
     and providing the persons ánd contactsToShow arrays with the
     received data. */
     useEffect(() => { 

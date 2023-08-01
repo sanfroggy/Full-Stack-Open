@@ -26,6 +26,7 @@ const App = (props) => {
                 name: newName
             }
             setPersons(persons.concat(personObject))
+            setNewName('')
         }
     }
 

@@ -8,15 +8,15 @@ import PersonForm from './components/PersonForm.js'
 const App = (props) => {
 
     /*Creating "state variables" for the person object to be stored
-    and the values currently written on the input fields */
+    and the values currently written on the input fields. */
     const [persons, setPersons] = useState([])
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
     const [showNames, setShowNames] = useState('')
     const [contactsToShow, setContactsToShow] = useState([...persons])
 
-    /*Getting the data of 4 persons form JSON server on initial render
-    and providing the persons ánd contacts to show arrays with the
+    /*Getting the data of 4 contacts from JSON server on initial render
+    and providing the persons Ã¡nd contactsToShow arrays with the
     received data. */
     useEffect(() => { 
         axios.get('http://localhost:3001/persons')

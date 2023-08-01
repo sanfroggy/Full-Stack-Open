@@ -45,7 +45,8 @@ const App = (props) => {
             setContactsToShow([...persons].concat(personObject).filter(contact =>
                 contact.name.toLowerCase().indexOf(showNames.toLowerCase()) >= 0))
             setPersons(persons.concat(personObject))
-
+            setNewName('')
+            setNewNumber('')
         }
     }
 

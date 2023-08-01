@@ -15,8 +15,8 @@ const App = (props) => {
     const [showNames, setShowNames] = useState('')
     const [contactsToShow, setContactsToShow] = useState([...persons])
 
-    /*Getting the data of 4 persons form JSON server on initial render
-    and providing the persons ánd contacts to show arrays with the
+    /*Getting the data of 4 contacts from JSON server on initial render
+    and providing the persons Ã¡nd contactsToShow arrays with the
     received data. */
     useEffect(() => { 
         axios.get('http://localhost:3001/persons')
@@ -30,8 +30,9 @@ const App = (props) => {
     persons Array when the button is pressed and preventing the 
     default behavior that would occur when submitting the form. Also checking
     if the given name is already in persons list and generating an
-    alert if that is true. Updating the list of contacts to show as well
-    according to the value of the filter input field. */
+    alert if that is true. Updating the list of contacts to show
+    according to the value of the filter input field, as well as
+    updating the list of contacts on the JSON server. */
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()

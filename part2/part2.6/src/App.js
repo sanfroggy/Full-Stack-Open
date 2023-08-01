@@ -20,6 +20,7 @@ const App = (props) => {
             name: newName
         }
         setPersons(persons.concat(personObject))
+        setNewName('')
     }
 
     /*Getting the value of the input field when it is changed

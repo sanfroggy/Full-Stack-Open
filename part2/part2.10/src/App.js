@@ -1,4 +1,4 @@
-//Importing useState and the Person component.
+//Importing useState, useEffect as well as the necessary components.
 import { useState } from 'react'
 import Persons from './components/Persons'
 import Filter from './components/Filter'

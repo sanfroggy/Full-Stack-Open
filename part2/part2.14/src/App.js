@@ -17,7 +17,7 @@ const App = (props) => {
 
     /*Getting the data of 4 persons from JSON server through 
     getAll function defined in personService on initial render 
-    and providing the persons and contacts to show arrays with the received data. */
+    and providing the persons and contactsToShow arrays with the received data. */
     useEffect(() => { 
         personService.getAll().then(initialData => {
             setPersons(initialData)
@@ -25,6 +25,10 @@ const App = (props) => {
         })
     }, [])
 
+    /*Getting the current data of persons from JSON server through 
+    getAll function defined in personService and providing the persons 
+    and contactsToShow arrays with the received data after modifying the list,
+    e.g. deleting a contact. */
     const updateList = () => {
         personService.getAll().then(currentData => {
             setPersons(currentData)

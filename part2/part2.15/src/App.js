@@ -46,6 +46,11 @@ const App = (props) => {
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
             event.preventDefault()
+
+            /*Using window.confirm to ask the user if he/she wants to replace the current
+            phonenumber, when a person with the same name already exists in the phonebook.
+            The number is the replaced with the entered one through updateContact function
+            defined in personService and the person and contactToShow arrays are updated accordingly. */
             if (window.confirm(`Contact ${newName} is already saved in the
             list of contacts, do you want to replace the currently saved phone number with
             ${newNumber}?`)) {

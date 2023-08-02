@@ -18,7 +18,7 @@ const App = (props) => {
     /*Getting the data of 4 persons from JSON server through 
     getAll function defined in personService on initial render 
     and providing the persons and contactsToShow arrays with the received data. */
-    useEffect(() => { 
+    useEffect(() => {
         personService.getAll().then(initialData => {
             setPersons(initialData)
             setContactsToShow(initialData)
@@ -60,7 +60,7 @@ const App = (props) => {
                     setContactsToShow([...persons].concat(createdContact).filter(contact =>
                         contact.name.toLowerCase().indexOf(showNames.toLowerCase()) >= 0))
                     setPersons(persons.concat(createdContact))
-                })           
+                })
             setNewName('')
             setNewNumber('')
 

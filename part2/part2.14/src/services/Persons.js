@@ -14,10 +14,10 @@ const createContact = newContact => {
 }
 
 //Creating a function to delete a contact from JSON server.
-const deleteContact = contact => {
-    if (window.confirm(`Do you really want to delete ${contact.name}?`)) {
-        axios.delete(`${baseUrl}/${contact.id}`)
-            .then(console.log(`${contact.name} deleted from database`))
+const deleteContact = (contactId, contactName) => {
+    if (window.confirm(`Do you really want to delete ${contactName}?`)) {
+        axios.delete(`${baseUrl}/${contactId}`)
+            .then(console.log(`${contactName} deleted from database`))
             .catch(error => {
                 console.error('There was an error!', error);
             });

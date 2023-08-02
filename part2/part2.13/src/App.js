@@ -17,7 +17,7 @@ const App = (props) => {
 
     /*Getting the data of 4 persons from JSON server through 
     getAll function defined in personService on initial render 
-    and providing the persons ánd contacts to show arrays with the received data. */
+    and providing the persons ánd contactsToShow arrays with the received data. */
     useEffect(() => { 
         personService.getAll().then(initialData => {
             setPersons(initialData)

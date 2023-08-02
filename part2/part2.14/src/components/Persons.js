@@ -9,9 +9,13 @@ const Persons = (props) => {
     )
 }
 
-//Defining the Person component containing the information of a single contact.
+/*Defining the Person component containing the information of a single contact 
+as well as a button for deleting the Person in question from the list of contacts displayed. */
 const Person = (props) => {
 
+    /*Defining a function that calls the deleteContact function defined in
+    personService with the data of the person to be deleted. Also calls the 
+    defined function that updates the list of contacts. */
     const deleteContact = contact => {
         personService.deleteContact(contact)
         props.updateFnct()

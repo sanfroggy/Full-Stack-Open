@@ -68,11 +68,13 @@ const App = (props) => {
                             setContactsToShow(currentData.filter(contact =>
                                 contact.name.toLowerCase().indexOf(showNames.toLowerCase()) >= 0))
                         })
-                    })
+                    }).catch(error => {
+                        console.error('There was an error!', error);
+                    });
                 setNewName('')
                 setNewNumber('')
             }
-                
+
         } else {
             event.preventDefault()
             const personObject = {

@@ -23,7 +23,7 @@ const Person = (props) => {
 
     return (
         <><p>{props.name}: {props.number} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button onClick={() => { deleteContact(props.contact.id, props.contact.name) }}>Delete</button></p></>
+            <button onClick={() => { deleteContact(props.contact.id, props.name) }}>Delete</button></p></>
     )
 }
 

@@ -28,7 +28,7 @@ const App = (props) => {
     /*Using window.confirm to ask the user if he/she really wants to delete 
     the data of an existing person. Current data of persons is the received
     from JSON server through getAll function defined in personService and filtered
-    to make sure the deleted contact is also deleted from the current arrays */
+    to make sure that the deleted contact is also deleted from the current arrays */
     const handleDelete = (id, name) => {
         if (window.confirm(`Do you really want to delete ${name}?`)) {
             personService.deleteContact(id)

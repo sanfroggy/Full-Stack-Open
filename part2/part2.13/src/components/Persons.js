@@ -7,7 +7,7 @@ const Persons = (props) => {
     )
 }
 
-//Defining the Personcomponent containing the information of a single contact.
+//Defining the Person component containing the information of a single contact.
 const Person = (props) => {
     return (
         <p>{props.name}: {props.number}</p>

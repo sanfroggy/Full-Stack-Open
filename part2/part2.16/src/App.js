@@ -28,7 +28,8 @@ const App = (props) => {
     }, [])
 
     /*Using window.confirm to ask the user if he/she really wants to delete 
-    the data of an existing person. Current data of persons is received
+    the data of an existing person and defining a message informing the user that the
+    delete operation was a success. Current data of persons is received
     from JSON server through getAll function defined in personService and filtered
     to make sure that the deleted contact is also deleted from the current arrays */
     const handleDelete = (id, name) => {
@@ -54,7 +55,8 @@ const App = (props) => {
     persons Array when the button is pressed and preventing the 
     default behavior that would occur when submitting the form.
     Updating the list of contacts to show according to the value of the filter 
-    input field, as well as updating the list of contacts on the JSON server 
+    input field, defining a message to inform the user of a successfully
+    created new contact, as well as updating the list of contacts on the JSON server 
     through createContact function defined in personService. */
     const addPerson = (event) => {
         if (persons.some(person => person.name === newName)) {
@@ -63,7 +65,8 @@ const App = (props) => {
             /*Using window.confirm to ask the user if he/she wants to replace the current
             phonenumber, when a person with the same name already exists in the phonebook.
             The number is the replaced with the entered one through updateContact function
-            defined in personService and the person and contactToShow arrays are updated accordingly. */
+            defined in personService, a message is defined to inform the user
+            of a successful update operation and the person and contactToShow arrays are updated accordingly. */
             if (window.confirm(`Contact ${newName} is already saved in the
             list of contacts, do you want to replace the currently saved phone number with
             ${newNumber}?`)) {
@@ -136,8 +139,9 @@ const App = (props) => {
         setNewNumber(event.target.value)
     }
 
-    /*Displaying the Filter, PersonForm and Persons components resulting in a list of 
-    filtered names and numbers of contacts and input fields and buttons 
+    /*Displaying the Notification, Filter, PersonForm and Persons components resulting in a message
+    to display when errors occur or when an operation is successful, list of 
+    filtered names and numbers of contacts and input fields, as well as buttons 
     for filtering and adding data. */
     return (
         <div>

@@ -34,8 +34,14 @@ const App = (props) => {
                 showCountries.toLowerCase()) >= 0))
         })
 
-    }, [showCountries])
+    }, [])
 
+    useEffect(() => {
+        setCountriesToShow(countries.filter(country => country.name.toLowerCase().indexOf(
+            showCountries.toLowerCase()) >= 0))
+
+    }, [showCountries])
+    
     /*Getting the value of the input field when it is changed
     and setting it as a new value for the showCountries "state variable". */
     const handleFilterInputChange = (event) => {

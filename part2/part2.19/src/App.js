@@ -48,6 +48,8 @@ const App = (props) => {
         setShowCountries(event.target.value)
     }
 
+    /*Updating the countriesToShow array to show only the information
+    of the country related to the button pressed. */
     const handleButtonPress = (name) => {
         setCountriesToShow(countries.filter(country => country.name === name))
     }

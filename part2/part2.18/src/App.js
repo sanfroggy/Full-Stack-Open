@@ -45,7 +45,7 @@ const App = (props) => {
     /*Displaying the required components according to the size of the filtered data array.
     If the length of the countriesToShow array is more than 10 only message needs to be shown.
     If it is less than 10 either the information of a single country or multiple countries 
-    is displayed in Country or Countries component.*/
+    is displayed in Country or Countries component. Filter component needs to be displayed always. */
     if (countriesToShow.length > 10 || (countriesToShow.length === 0 && showCountries === '')) {
         return (
             <div>

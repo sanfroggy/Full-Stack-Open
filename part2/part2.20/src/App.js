@@ -59,7 +59,7 @@ const App = (props) => {
     }
 
     /*Getting the weather data of a single capital through getWeather function
-    defined in countryService. The function uses openweathermap.org api.*/
+    defined in countryService. The function uses openweathermap api.*/
     const getWeather = (city) => {
         countryService.getWeather(city, api_key).then(weatherData => {
             const newObject = {

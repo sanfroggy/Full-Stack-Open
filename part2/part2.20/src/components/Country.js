@@ -81,7 +81,7 @@ const Country = (props) => {
 
         /*If the country has one capital the information is returned and presented
         in an approppriate manner. Also checking if the weather data can be found
-        (E.g. The weather data of South Georgia's capital is not found through the api. */
+        (E.g. The weather data of South Georgia's capital is not found through the api.) */
         } else {
             const weatherObject = props.wthrObj
             const iconUrl = `https://openweathermap.org/img/wn/${weatherObject.iconCode}.png`

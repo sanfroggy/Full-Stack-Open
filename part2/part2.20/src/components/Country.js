@@ -9,6 +9,9 @@ const Country = (props) => {
         height: 200
     }
 
+    /*Checking if the country has more than one capital or if it is undefined
+    and calling the approppriate function received in props to update the weather data object
+    providing the data for the component through props. */
     useEffect(() => {
         if (props.capital !== undefined && props.capital.length === 1) { 
             props.wthrFnct(props.capital)
@@ -16,20 +19,6 @@ const Country = (props) => {
         if (props.capital !== undefined && props.capital.length > 1) {
             props.wthrsFnct(props.capital)
         }
-        /*if (props.capital !== undefined && props.capital.length > 1) {
-            props.capital.forEach(capital => {
-                props.wthrFnct(capital)
-                const newWeatherObj = {
-                    name: capital.name,
-                    temperature: props.wthrObj.temperature,
-                    iconCode: props.wthrObj.iconCode,
-                    description: props.wthrObj.description,
-                    wind: props.wthrObj.wind
-                }
-
-                setWeatherObjects(weatherObjects.concat(newWeatherObj))
-            })         
-        }*/
     }, [])
 
     /*Checking if a capital exists (E.g. Antarctica does not contain a capital.)
@@ -89,8 +78,11 @@ const Country = (props) => {
                     </>
                 </>
             )
+
+        /*If the country has one capital the information is returned and presented
+        in an approppriate manner. Also checking if the weather data can be found
+        (E.g. The weather data of South Georgia's capital is not found through the api. */
         } else {
-            
             const weatherObject = props.wthrObj
             const iconUrl = `https://openweathermap.org/img/wn/${weatherObject.iconCode}.png`
             return (

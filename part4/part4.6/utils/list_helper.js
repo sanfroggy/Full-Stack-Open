@@ -21,6 +21,9 @@ const favoriteBlog = (blogs) => {
     }
 }
 
+/*Create and export a favoriteBlog function to return the
+an object containing the name of the author with the most blogs 
+and the number of blogs under his name. */
 const mostBlogs = (blogs) => {
     if (blogs.length > 0) {
         const authors = [...new Set(blogs.map(blog => blog.author))]

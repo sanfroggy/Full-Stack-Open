@@ -1,5 +1,5 @@
 /*Defining the constants for the use of Express, cors, and mongoose.
-as well as the necessary modules. */
+as well as all the necessary modules. */
 const config = require('./utils/config')
 const express = require('express')
 const app = express()

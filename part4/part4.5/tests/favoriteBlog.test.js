@@ -88,7 +88,9 @@ describe('favorite blog', () => {
         }
     ]
 
-    //Testing the function with an array containing multiple entries.
+    /*Testing the function with an array containing multiple entries with
+    the most liked ones having equally many likes. Because of how
+    the function is written the latter one of the array is expected to be returned. */
     test('of a bigger list equals one of the most liked', () => {
         const result = listHelper.favoriteBlog(listWithMultipleMostLikedBlogs)
         expect(result).toEqual(listWithMultipleMostLikedBlogs[2])

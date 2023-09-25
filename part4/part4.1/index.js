@@ -25,7 +25,7 @@ mongoose.connect(mongoUrl)
 app.use(cors())
 app.use(express.json())
 
-//Define the routes for getting blogs from MongoDB and saving a new one.
+//Define the routes for getting all the blogs from MongoDB and saving a new one.
 app.get('/api/blogs', (request, response) => {
     Blog
         .find({})

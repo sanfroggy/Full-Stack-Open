@@ -1,8 +1,11 @@
 //Define the listHelper constant containing the function to be tested.
 const listHelper = require('../utils/list_helper')
 
+/*Defining a describe block to contain the test cases related to totalLikes
+function in list_helper file. */
 describe('total likes', () => {
 
+    //Testing the function with an empty array.
     test('of empty list is zero', () => {
         const result = listHelper.totalLikes([])
         expect(result).toBe(0)
@@ -19,6 +22,7 @@ describe('total likes', () => {
         }
     ]
 
+    //Testing the function with an array containing one entry.
     test('when list has only one blog equals the likes of that blog', () => {
         const result = listHelper.totalLikes(listWithOneBlog)
         expect(result).toBe(250)
@@ -51,6 +55,7 @@ describe('total likes', () => {
         }
     ]
 
+    //Testing the function with an array containing multiple entries.
     test('of a bigger list is calculated right', () => {
         const result = listHelper.totalLikes(listWithMultipleBlogs)
         expect(result).toBe(30650)

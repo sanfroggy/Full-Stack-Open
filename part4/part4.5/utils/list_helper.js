@@ -11,8 +11,8 @@ const totalLikes = (blogs) => {
     return total
 }
 
-/*Create and export a totalLikes function to calculate the
-total number of likes in a received array of blogs. */
+/*Create and export a favoriteBlog function to return the
+blog object with the most likes in an array of blogs. */
 const favoriteBlog = (blogs) => {
     if (blogs.length > 0) {
         return blogs.reduce((a, b) => a.likes > b.likes ? a : b)

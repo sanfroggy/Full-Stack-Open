@@ -123,6 +123,10 @@ test('if the added blog is not given a value for likes it is set to zero', async
 
 })
 
+/*Creating a test using async and await to test that
+if a new blog is not given a title or a url, or they have 
+null or undefined value, the response has an approppriate
+400 status code. */
 test('if the added blog is not given a value for title or url a' +
 ' response is invoked with status code 400.', async () => {
 

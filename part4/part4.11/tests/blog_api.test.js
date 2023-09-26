@@ -85,6 +85,10 @@ test('blogs can be added to the database successfully', async () => {
 
 })
 
+/*Creating a test using async and await to test that
+if a new blog is added to the database without having
+a value, having null or undefined for likes, that value is set 
+to zero. */
 test('if the added blog is not given a value for likes it is set to zero', async () => {
 
     const newBlog = {
@@ -93,9 +97,29 @@ test('if the added blog is not given a value for likes it is set to zero', async
         url: "http://www.conspiracytheorist.net"
     }
 
-    const response = await api.post('/api/blogs').send(newBlog)
+    let response = await api.post('/api/blogs').send(newBlog)
     expect(response.body.likes).toBe(0)
-    console.log(response.body)
+
+    const anotherNewBlog = {
+        title: 'Cooking magnificent food',
+        author: 'HomeChef',
+        url: "http://www.foodfanatics.org",
+        likes: null
+    }
+
+    response = await api.post('/api/blogs').send(anotherNewBlog)
+    expect(response.body.likes).toBe(0)
+
+    const yetAnotherNewBlog = {
+        title: 'Pet pictures',
+        author: 'CCL',
+        url: "http://www.crazycatlady.com",
+        likes: undefined
+    }
+
+    response = await api.post('/api/blogs').send(yetAnotherNewBlog)
+    expect(response.body.likes).toBe(0)
+
 
 })
 

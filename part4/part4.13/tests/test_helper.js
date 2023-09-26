@@ -24,6 +24,8 @@ const initialBlogs = [
     }
 ]
 
+/*Returning an id that is sure not to exist in the 
+MongoDB database for testing purposes. */
 const nonExistingId = async () => {
     const blog = new Blog({
         title: 'willremovethissoon',
@@ -36,6 +38,7 @@ const nonExistingId = async () => {
     return blog._id.toString()
 }
 
+//Return all the blogs in the MongoDB database.
 const blogsInDb = async () => {
     const blogs = await Blog.find({})
     return blogs.map(blog => blog.toJSON())

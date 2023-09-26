@@ -37,7 +37,7 @@ blogsRouter.delete('/:id', async (request, response) => {
         await Blog.findByIdAndRemove(request.params.id)
         response.status(204).end()
     } else {
-        response.status(404).end()
+        response.status(400).end()
     }
 })
 

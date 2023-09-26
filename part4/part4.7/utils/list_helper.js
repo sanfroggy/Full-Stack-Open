@@ -49,6 +49,9 @@ const mostBlogs = (blogs) => {
     }
 }
 
+/*Create and export a mostLikes function to return the
+an object containing the name of the author with the most total
+likes and the number of likes under his name. */
 const mostLikes = (blogs) => {
     if (blogs.length > 0) {
         const authors = [...new Set(blogs.map(blog => blog.author))]

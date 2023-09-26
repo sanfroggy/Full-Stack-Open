@@ -172,6 +172,9 @@ describe('when a post request is made', () => {
 
 describe('when a delete request is made', () => {
 
+    /*Creating a test using async and await to test that
+    a blog is successfully deleted when the request is given a valid id.  
+    If not the response has an approppriate 404 status code. */
     test('the first note is succesfully deleted', async () => {
 
         const blogsAtStart = await helper.blogsInDb()

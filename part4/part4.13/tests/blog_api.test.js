@@ -55,9 +55,9 @@ describe('when a post request is made', () => {
             likes: 3560
         }
 
-        const response = await api.post('/api/blogs').send(newBlog)
+        await api.post('/api/blogs').send(newBlog)
             .expect(201)
-        //expect(response.headers('Content-Type')).toContain(/application\/json/)
+            .expect('Content-Type', /application\/json/)
 
         const blogsAtEnd = await helper.blogsInDb()
         expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length + 1)

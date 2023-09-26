@@ -16,6 +16,9 @@ test('correct number of blogs is returned', async () => {
     expect(response.body).toHaveLength(3)
 })
 
+/*Creating a test using async and await to test that
+a id field exists for each of the blogs instead of an
+_id field. */
 test('the idenfitying field for a blog is id and not _id', async () => {
 
     const response = await api.get('/api/blogs')
@@ -25,6 +28,9 @@ test('the idenfitying field for a blog is id and not _id', async () => {
     })  
 })
 
+/*Creating a test using async and await to test that
+a new blog is added to the database when a post request is
+sent and that the data is in json form. */
 test('blogs can be added to the database successfully', async () => {
 
     const comparisonResponse = await api.get('/api/blogs')

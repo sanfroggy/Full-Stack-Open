@@ -31,9 +31,10 @@ const nonExistingId = async () => {
         title: 'willremovethissoon',
         author: 'nonrelevant',
         url: 'http://www.urlneedstobedefined.com',
-        })
+        likes: 0
+    })
     await blog.save()
-    await blog.remove()
+    await Blog.findByIdAndRemove(blog._id)
 
     return blog._id.toString()
 }

@@ -2,8 +2,8 @@
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 
-/*Define the routes for getting blogs from MongoDB and saving a new one
-with async/await. */
+/*Define the routes for getting blogs from MongoDB with async/await
+and saving a new one. */
 blogsRouter.get('/', async (request, response) => {
     const blogs = await Blog.find({})
     response.json(blogs)

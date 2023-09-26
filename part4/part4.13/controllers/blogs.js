@@ -9,7 +9,7 @@ blogsRouter.get('/', async (request, response) => {
     response.json(blogs)
 })
 
-/*Define the route and saving a new one with async / await, 
+/*Define the route for saving a new blog with async / await, 
 unless title or url have undefined or null values. */
 blogsRouter.post('/', async (request, response) => {
     const body = request.body
@@ -29,6 +29,8 @@ blogsRouter.post('/', async (request, response) => {
     }
 })
 
+/*Define the route for deleting an existing blog with
+async / await, unless the given id is invalid. */
 blogsRouter.delete('/:id', async (request, response) => {
     blogToDelete = await Blog.findById(request.params.id)
     if (blogToDelete !== null && blogToDelete !== undefined) {

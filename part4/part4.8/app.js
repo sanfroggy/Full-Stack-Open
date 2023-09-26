@@ -1,7 +1,9 @@
-/*Defining the constants for the use of Express, cors, and mongoose.
+/*Defining the constants for the use of Express, 
+express-async-errors, cors, and mongoose.
 as well as the necessary modules. */
 const config = require('./utils/config')
 const express = require('express')
+require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const blogsRouter = require('./controllers/blogs')

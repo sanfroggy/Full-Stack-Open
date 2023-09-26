@@ -187,17 +187,17 @@ describe('when a delete request is made', () => {
         expect(blogsAtEnd.map(blog => blog.id)).not.toContain(blogsAtStart[0].id)
 
         response = await api.delete(`/api/blogs/${blogsAtStart[0].id}`)
-            .expect(404)
+            .expect(400)
 
         blogsAtEnd = await helper.blogsInDb()
         expect(blogsAtEnd).toHaveLength(blogsAtStart.length - 1)
 
-        response = await api.delete(`/api/blogs/${helper.nonExistingId}`)
-            .expect(404)
+        const nonExistentId = await helper.nonExistingId()
+        response = await api.delete(`/api/blogs/${nonExistentId}`)
+            .expect(400)
 
         blogsAtEnd = await helper.blogsInDb()
         expect(blogsAtEnd).toHaveLength(blogsAtStart.length - 1)
-
 
     })
 })

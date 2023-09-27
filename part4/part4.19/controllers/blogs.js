@@ -12,6 +12,8 @@ blogsRouter.get('/', async (request, response) => {
     response.json(blogs)
 })
 
+/*Separating the actual value of the received authorization token
+from the authentication scheme declaration. (Bearer in this case) */
 const getTokenFrom = request => {
     const auth = request.get('authorization')
     if (auth && auth.startsWith('Bearer ')) {

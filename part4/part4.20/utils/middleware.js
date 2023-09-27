@@ -50,7 +50,7 @@ const errorHandler = (error, req, res, next) => {
     next(error)
 }
 
-//Exporting the defined error handlers.
+//Exporting the defined middlewares.
 module.exports = {
     requestLogger,
     unknownEndpoint,

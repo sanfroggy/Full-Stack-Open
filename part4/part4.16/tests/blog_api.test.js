@@ -298,6 +298,11 @@ describe('when there is initially one user at db', () => {
 
 describe('when a post request is made to add a user', () => {
 
+    /*Creating a test using async and await to test that
+    the user will not be saved to MongoDB database,
+    if the username or password are too short or they are missing
+    valid values entirely. Also checking that there are no
+    other users in the database with the same name. */
     test('if necessary data is missing or faulty, ' 
         + 'the user cannot be added', async () => {
         let newUser = {

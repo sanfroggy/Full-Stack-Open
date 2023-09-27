@@ -30,7 +30,9 @@ usersRouter.post('/', async (request, response) => {
     
 })
 
-//Define the route for getting users from MongoDB.
+/*Define the route for getting users from MongoDB and
+populating their blogs array with the referred Blog object's
+url, title and author. */
 usersRouter.get('/', async (request, response) => {
     const users = await User.find({}).populate('blogs', { url: 1, title: 1, author: 1 })
     response.json(users)

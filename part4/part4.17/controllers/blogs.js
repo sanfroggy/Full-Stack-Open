@@ -3,7 +3,9 @@ const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 const User = require('../models/user')
 
-//Define the route for getting blogs from MongoDB 
+/*Define the route for getting blogs from MongoDB and
+populating their user value with the referred User object's
+username, and name. */
 blogsRouter.get('/', async (request, response) => {
     const blogs = await Blog.find({}).populate('user', {username: 1, name: 1})
     response.json(blogs)

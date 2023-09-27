@@ -17,6 +17,8 @@ blogsRouter.post('/', async (request, response) => {
     const allusers = await User.find({})
     const user = await allusers[0]
 
+    /*Defining the new blog object and giving it a 
+    a user._id value to refer to the user who created it. */
     const blog = new Blog({
         title: body.title,
         author: body.author,
@@ -25,6 +27,9 @@ blogsRouter.post('/', async (request, response) => {
         user: user._id
     })
 
+    /*Saving the blog._id in the blog collection of the
+    user as well and saving the user to the database
+    with the blog._id defined. */
     if (!blog.title || !blog.url) {
         response.status(400).end()
     } else {

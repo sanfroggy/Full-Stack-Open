@@ -1,4 +1,4 @@
-//Define constants for express Router and the blog module.
+//Define constants for express Router, blog and user modules.
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 const User = require('../models/user')

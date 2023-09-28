@@ -59,7 +59,9 @@ blogsRouter.post('/', async (request, response) => {
 async / await, unless the given id is invalid. */
 blogsRouter.delete('/:id', async (request, response) => {
 
-
+    /*Decoding the received authorization token to identify the logged in user
+    and making sure that only the user who has created the blog,
+    can delete it. */
     const decoded = jwt.verify(request.token, process.env.SECRET)
 
     if (!decoded.id) {

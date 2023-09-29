@@ -231,6 +231,9 @@ describe('when a post request is made', () => {
 
     })
 
+    /*Creating a test using async and await to test that
+    if a valid token is not provided when adding a new blog, 
+    the response has an approppriate 401 status code. */
     test('blogs cannot be added if the token is missing or invalid', async () => {
 
         const newBlog = {

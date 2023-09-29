@@ -18,8 +18,9 @@ blogsRouter.get('/', async (request, response) => {
 })
 
 /*Defining the route for saving a new blog with async / await, 
-unless title or url have undefined or null values. Also decoding
-the received autorization token to identify the logged in user. */
+unless title or url have undefined or null values. Also using the 
+defined middlewares to identify the logged in user by decoding
+the jwt authorization token. */
 blogsRouter.post('/', userExtractor, async (request, response) => {
     const body = request.body
 
@@ -59,9 +60,9 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 async / await, unless the given id is invalid. */
 blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 
-    /*Decoding the received authorization token to identify the logged in user
-    and making sure that only the user who has created the blog,
-    can delete it. */
+    /*Using the define dmiddlewares to identify the logged in user
+    by decoding the jtw authorization token and making sure that 
+    only the user who has created the blog, can delete it. */
     blogToDelete = await Blog.findById(request.params.id)
 
     const user = request.user

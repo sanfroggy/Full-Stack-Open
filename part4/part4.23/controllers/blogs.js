@@ -1,7 +1,6 @@
-/*Defining constants for jwt, blog model,
+/*Defining constants for blog model,
 express Router, blog and user modules and 
 userExtractor middleware. */
-//const jwt = require('jsonwebtoken')
 const blog = require('../models/blog')
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
@@ -73,12 +72,15 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 
     if (blogToDelete !== null && blogToDelete !== undefined) {
 
+        /*Deleting the blog with the received id and removing the reference to
+        the deleted blog from the users.blogs array and saving the user. */
+        const index = user.blogs.indexOf(blogToDelete.id)
+       
+        if (index > -1) {
+            user.blogs.splice(index, 1)
+        }
+        
         await Blog.findOneAndRemove(blogToDelete)
-
-        /*Filtering out the id references from the user's blog list, 
-        in which the object referred to does not exist. */
-        user.blogs = await user.blogs.filter(blog => Blog.findById(blog.id) !== null)
-            .filter(blog => Blog.findById(blog.id) !== undefined)
 
         await user.save()
         

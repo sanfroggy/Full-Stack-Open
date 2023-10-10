@@ -55,13 +55,15 @@ const App = () => {
         }
     }
 
+    /*Creating a method to set the value of user to null and remove it's data
+    from local storage, when logging out. */
     const handleLogout = () => {
         setUser(null)
         window.localStorage.removeItem('loggedUserData')
     }
 
     /*If user has a null value, as in no user is logged in, the loginForm component is rendered.
-    If not the list of blogs and the name of the logged in user are shown. */
+    If not, the list of blogs and the name of the logged in user are shown, as well as the logout button. */
     if (!user) {
         return (
             <div>

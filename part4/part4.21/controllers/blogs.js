@@ -76,7 +76,9 @@ blogsRouter.delete('/:id', async (request, response) => {
     }
 
     if (blogToDelete !== null && blogToDelete !== undefined) {
-        
+
+        /*Deleting the blog with the received id and removing the reference to
+        the deleted blog from the users.blogs array and saving the user. */
         const index = user.blogs.indexOf(blogToDelete.id)
 
         if (index > -1) {

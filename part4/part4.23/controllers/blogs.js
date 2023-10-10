@@ -7,7 +7,6 @@ const Blog = require('../models/blog')
 const User = require('../models/user')
 const { userExtractor } = require('../utils/middleware')
 
-
 /*Defining the route for getting blogs from MongoDB and
 populating their user value with the referred User object's
 username, and name. */

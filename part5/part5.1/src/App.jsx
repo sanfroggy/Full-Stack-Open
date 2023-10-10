@@ -1,3 +1,4 @@
+//Importing the useState and useEffect hooks, as well as the necessary components and services.
 import { useState, useEffect } from 'react'
 import Blog from './components/Blog'
 import blogService from './services/Blogs'

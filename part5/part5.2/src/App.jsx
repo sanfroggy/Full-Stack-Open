@@ -1,6 +1,6 @@
 //Importing the useState and useEffect hooks, as well as the necessary components and services.
 import { useState, useEffect } from 'react'
-import Blog from './components/Blog'
+import Blogs from './components/Blogs'
 import blogService from './services/Blogs'
 import loginService from './services/Login'
 import LoginForm from './components/LoginForm'
@@ -11,8 +11,8 @@ const App = () => {
     const [blogs, setBlogs] = useState([])
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [user, setUser] = useState(JSON.parse(
-        window.localStorage.getItem('loggedUserData')))
+    const loggedUser = JSON.parse(window.localStorage.getItem('loggedUserData'))
+    const [user, setUser] = useState(loggedUser)
 
     //Getting the blogs from the MongoDB database on first render, with the useEffect hook.
     useEffect(() => {
@@ -63,7 +63,7 @@ const App = () => {
     }
 
     /*If user has a null value, as in no user is logged in, the loginForm component is rendered.
-    If not, the list of blogs and the name of the logged in user are shown, as well as the logout button. */
+    If not the list of blogs and the name of the logged in user are shown, as well as the logout button. */
     if (!user) {
         return (
             <div>
@@ -74,15 +74,7 @@ const App = () => {
     } else {
         return (
             <div>
-                <h2>Blogs:</h2>
-                <p>{`Currently logged in as ${user.name}`}.</p>
-                
-                <button onClick={handleLogout}>Logout</button>
-                <br />
-                <br />
-                {blogs.map(blog =>
-                    <Blog key={blog.id} blog={blog} />
-                )}
+                <Blogs user={user} logoutMethod={handleLogout} blogs={blogs} />
             </div>
         )
     }

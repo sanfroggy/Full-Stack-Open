@@ -49,7 +49,12 @@ const App = () => {
         setUrl(event.target.value)
     }
 
-
+    /*Defining a method to be passed on to the newBlogForm component. This method
+    is responsible for getting the data of the user to be created from the form,
+    getting the authorization token from the local storage and returning the data
+    of the new blog item if the creation is successful. If not the exception is caught
+    and printed to the console. The defined blogService is used to pass the token
+    and the data of the new blog to the Node backend. */
     const addBlog = async (event) => {
         event.preventDefault()
 

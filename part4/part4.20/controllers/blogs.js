@@ -38,7 +38,9 @@ blogsRouter.post('/', async (request, response) => {
     user as well and saving the user to the database
     with the blog._id defined. */
     if (!blog.title || !blog.url) {
-        response.status(400).end()
+        response.status(400).json({
+            error: 'Blog must have a title and an url.'
+        }).end()
     } else {
         const savedBlog = await blog.save()
         if (user.blogs.length === 0) {

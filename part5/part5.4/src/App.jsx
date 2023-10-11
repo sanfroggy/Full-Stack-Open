@@ -71,6 +71,10 @@ const App = () => {
             const token = JSON.parse(window.localStorage.getItem('loggedUserData')).token
             if (token) {
                 blogService.setToken(token)
+                
+                /*Setting the message "state variable" to be passed on to the 
+                Notification component, in the case that the new blog is 
+                added successfully. */
                 setErrorMessage(null)
                 const response = await blogService.createNew(newBlog)
                 setMessage(`${response.title} was successfully created.`)
@@ -81,6 +85,10 @@ const App = () => {
                 setBlogs(await blogService.getAll())
             }
         } catch (exception) {
+
+            /*Setting the errorMessage "state variable" to be passed on to the
+            Notification component, in the case that the new blog is 
+            not added successfully. */
             setMessage(null)
             setErrorMessage(exception.response.data.error)
             setTimeout(() => {
@@ -111,6 +119,9 @@ const App = () => {
             setPassword('')
             setBlogs(await blogService.getAll())
         } catch (exception) {
+
+            /*Setting the errorMessage "state variable" to be passed on to the 
+            Notification component, in the case of a failed login attempt. */
             setMessage(null)
             setErrorMessage(exception.response.data.error)
             setTimeout(() => {

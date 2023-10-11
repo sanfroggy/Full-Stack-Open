@@ -20,7 +20,9 @@ blogsRouter.post('/', async (request, response) => {
     })
 
     if (!blog.title || !blog.url) {
-        return response.status(400).end()
+        response.status(400).json({
+            error: 'Blog must have a title and an url.'
+        }).end()
     } else {
         const savedBlog = await blog.save()
         response.status(201).json(savedBlog)

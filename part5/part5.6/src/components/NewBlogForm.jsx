@@ -7,10 +7,15 @@ the data required for the creation of the new blog
 to the Node backend is received as parameter*/
 const NewBlogForm = ({createMethod}) => {
 
+    //Defining the "state variables" for title, author and url.
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [url, setUrl] = useState('')
 
+    /*Creating the new blog item with the data from the input
+    fields and passing it to the received function that provides
+    the Node backend with the data. Also resetting the values of 
+    the input fields. */
     const addBlog = async (event) => {
 
         event.preventDefault()

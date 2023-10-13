@@ -40,7 +40,8 @@ const Blog = ({ blog, updateMethod }) => {
         }
     }
 
-
+    /*Creating a function to increase the likes of a blog by one
+    when the like button is pressed. */
     const handleLikes = async (event) => {
         event.preventDefault()
 

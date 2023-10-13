@@ -113,6 +113,12 @@ const App = () => {
         }
     }
 
+    /*Defining a method to be passed on to the Blogs component. This method is
+    responsible for getting the authorization token from the local storage, deleting 
+    a blog from the database, when the remove button is pressed and displaying a message 
+    if the deletion is successful. If not the exception is caught and a message is displayed. 
+    The defined blogService is used to pass the updated blog data to the Node backend. 
+    The array is also sorted after the deletion. */
     const deleteBlog = async (blogId) => {
 
         try {        

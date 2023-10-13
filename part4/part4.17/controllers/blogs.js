@@ -84,7 +84,9 @@ blogsRouter.put('/:id', async (request, response) => {
             request.params.id, blog, { new: true })
         response.status(200).json(updatedBlog)
     } else {
-        response.status(404).end()
+        response.status(404).json({
+            error: 'Blog does not exist. It has possibly been deleted.'
+        }).end()
     }
 })
 

@@ -24,7 +24,8 @@ const App = () => {
     const [message, setMessage] = useState(null)
     const [errorMessage, setErrorMessage] = useState(null)
 
-    //Getting the blogs from the MongoDB database on first render, with the useEffect hook.
+    /*Getting the blogs from the MongoDB database on first render, with the useEffect hook
+    and sorting them according to their amount of likes. */
     useEffect(() => {
         blogService.getAll().then(blogs =>
             setBlogs([...blogs].sort((a, b) => b.likes - a.likes))
@@ -49,7 +50,8 @@ const App = () => {
     of the new blog item if the creation is successful. If not the exception is caught
     and an error message is shown. The defined blogService is used to pass the token
     and the data of the new blog to the Node backend. A new get request is sent to the
-    Node backend to make sure that the user field of blogs is populated correctly. */
+    Node backend to make sure that the user field of blogs is populated correctly
+    and the received array is then sorted accordingly. */
     const addBlog = async (newBlog) => {
 
         try {
@@ -93,7 +95,7 @@ const App = () => {
     responsible for updating the likes of a blog, when the like button is pressed
     and returning the data of the updated blog item if the creation is successful.
     If not the exception is caught and printed to console. The defined blogService is used
-    to pass the updated blog data to the Node backend. */
+    to pass the updated blog data to the Node backend. The array is also sorted after the update. */
     const addLike = async (updatedBlog) => {
 
         try {
@@ -115,7 +117,8 @@ const App = () => {
     responsible for the login event, when the form is submitted. The data of the user
     is returned in the response and stored in the user variable if the login is succesful.
     If not the exception is caught and printed to console. The defined loginService is used
-    to pass the login data to the Node backend. */
+    to pass the login data to the Node backend. The array containing the blogs is also
+    sorted after each login. */
     const handleLogin = async (event) => {
         event.preventDefault()
 

@@ -47,7 +47,8 @@ const App = () => {
     getting the authorization token from the local storage and returning the data
     of the new blog item if the creation is successful. If not the exception is caught
     and an error message is shown. The defined blogService is used to pass the token
-    and the data of the new blog to the Node backend. */
+    and the data of the new blog to the Node backend. A new get request is sent to the
+    Node backend to make sure that the user field of blogs is populated correctly. */
     const addBlog = async (newBlog) => {
 
         try {

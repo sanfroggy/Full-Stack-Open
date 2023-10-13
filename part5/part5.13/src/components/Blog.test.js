@@ -40,10 +40,15 @@ describe('When a Blog object is rendered', () => {
         element = screen.getByText('Title:')
         expect(element).toBeDefined()
         expect(element).toBeInTheDocument()
+
+        //Testing that the div containing the author, likes and url fields is initially hidden.
         expect(screen.getByTestId('blogInfo')).toHaveStyle('display: none')
 
         /*Testing that trying to get the author, url and likes fields with the method
         getbyText results in an error. */
+        expect(() => screen.getByText('TesterJester')).toThrow()
+        expect(() => screen.getByText('http://www.testingwhilejesting.com')).toThrow()
+        expect(() => screen.getByText('2340')).toThrow()
         expect(() => screen.getByText('Author: TesterJester')).toThrow()
         expect(() => screen.getByText('Url: http://www.testingwhilejesting.com')).toThrow()
         expect(() => screen.getByText('Likes: 2340')).toThrow()

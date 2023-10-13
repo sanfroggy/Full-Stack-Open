@@ -4,6 +4,9 @@ import { useState } from 'react'
 //Defining a Blog component for displaying the data of a single blog.
 const Blog = ({ blog }) => {
 
+    /*Creating css inline styles to style the blog info display and
+    to hide the borders and background from a button to make
+    the blog title a clickable label. */
     const blogStyle = {
         border: 'solid',
         borderWidth: 2.5,
@@ -19,11 +22,14 @@ const Blog = ({ blog }) => {
         fontSize: 14
     }
 
+    /*Creating "state variables" to control the visibility of elements
+    and the label of the view/hide button. */
     const [visible, setVisible] = useState(false)
 
     const showWhenVisible = { display: visible ? '' : 'none' }
     const [buttonLabel, setButtonLabel] = useState('View')
 
+    //Creating a function to toggle visibility and button label.
     const toggleVisibility = () => {
         setVisible(!visible)
         if (buttonLabel === 'View') {
@@ -34,6 +40,9 @@ const Blog = ({ blog }) => {
         }
     }
 
+    /*Returning the elements desired to be visible by using the 
+    toggleVisibility function and the defined showWhenVisible style.
+    Also checking if the blog has a defined user to return. */
         return (
             <div style={blogStyle}>
                 <b>Title:</b> <button style={titleButtonStyle} onClick={toggleVisibility}> {blog.title}</button>

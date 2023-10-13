@@ -54,6 +54,7 @@ const NewBlogForm = ({ createMethod }) => {
     )
 }
 
+//Using prop-types to give a warning if necessary values are not received correctly.
 NewBlogForm.propTypes = {
     createMethod: PropTypes.func.isRequired,
 }

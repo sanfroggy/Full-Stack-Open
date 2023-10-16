@@ -83,7 +83,7 @@ const Blog = (({ blog, updateMethod, loggedUser, deleteMethod }) => {
     Also checking if the blog has a defined user to return and if
     the blog is removable by the user currently loggged in. */
     return (
-        <div data-testid="allInfo" style={blogStyle}>
+        <div style={blogStyle}>
             <b>Title:</b> <button style={titleButtonStyle} onClick={toggleVisibility}> {blog.title}</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onClick={toggleVisibility}>{buttonLabel}</button>
             <div data-testid="blogInfo" style={showWhenVisible}>

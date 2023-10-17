@@ -9,17 +9,10 @@ import Blog from './Blog'
 
 describe('When a Blog object is rendered', () => {
 
-    /*Ignoring the errors related to PropTypes, defining
-    a container variable for the querySelector and a blog
-    to render. */
+    /*Ignoring the errors related to PropTypes and defining
+    a container variable for the querySelector. */
     const loggedErrors = console.error.bind(console.error)
     let container
-    const blog = {
-        title: 'A testable blog.',
-        author: 'TesterJester',
-        url: 'http://www.testingwhilejesting.com',
-        likes: 2340
-    }
 
     beforeAll(() => {
         console.error = errorMsg => {
@@ -27,6 +20,17 @@ describe('When a Blog object is rendered', () => {
             { errorMsg.toString().includes('Warning: Failed prop type:') && loggedErrors(errorMsg) }
         }
 
+    })
+
+    beforeEach(() => {
+        const blog = {
+            title: 'A testable blog.',
+            author: 'TesterJester',
+            url: 'http://www.testingwhilejesting.com',
+            likes: 2340
+        }
+
+        container = render(<Blog blog={blog} />).container
     })
 
     afterAll(() => {
@@ -37,8 +41,6 @@ describe('When a Blog object is rendered', () => {
     author, likes and url fields are ignored because of the visibility being
     set to false by default. */
     test('it initially renders title, but other values are hidden.', () => {
-
-        render(<Blog blog={blog} />)
 
         let element = screen.getByText('A testable blog.')
         expect(element).toBeDefined()
@@ -61,7 +63,6 @@ describe('When a Blog object is rendered', () => {
 
         /*Testing that before the clicking the button the title is rendered, but the
         div containing the author, likes and url fields is initially hidden. */
-        container = render(<Blog blog={blog} />).container
 
         let element = screen.getByText('A testable blog.')
         expect(element).toBeDefined()
@@ -109,26 +110,32 @@ describe('When a Blog object is rendered', () => {
         expect(div).toHaveStyle('display: none')
 
     })
+})
 
-    /*Testing that when the like button is clicked twice, the mock function provided as
-    an event handler is also called twice. */
-    describe('When a Blog object is rendered and the like button is pressed', () => {
+/*Testing that when the like button is clicked twice, the mock function provided as
+an event handler is also called twice. */
+describe('When a Blog object is rendered and the like button is pressed', () => {
 
-        test('The function is called the correct number of times.', async () => {
+    test('The function is called the correct number of times.', async () => {
 
-            const mockHandler = jest.fn()
+        const blog = {
+            title: 'A testable blog.',
+            author: 'TesterJester',
+            url: 'http://www.testingwhilejesting.com',
+            likes: 2340
+        }
 
-            render(<Blog blog={blog} updateMethod={mockHandler} />)
+        const mockHandler = jest.fn()
 
-            const user = userEvent.setup()
-            const button = screen.getByText('Like')
+        render(<Blog blog={blog} updateMethod={mockHandler} />)
 
-            await user.click(button)
-            await user.click(button)
+        const user = userEvent.setup()
+        const button = screen.getByText('Like')
 
-            expect(mockHandler.mock.calls).toHaveLength(2)
+        await user.click(button)
+        await user.click(button)
 
-        })
+        expect(mockHandler.mock.calls).toHaveLength(2)
+
     })
-
 })

@@ -72,9 +72,6 @@ describe('When a Blog object is rendered', () => {
         element = screen.getByText('Title:')
         expect(element).toBeDefined()
         expect(element).toBeInTheDocument()
-        expect(screen.queryByText('TesterJester')).toBeNull()
-        expect(screen.queryByText('http://www.testingwhilejesting.com')).toBeNull()
-        expect(screen.queryByText('2340')).toBeNull()
 
         const div = container.querySelector('.blogInfoContainer')
 

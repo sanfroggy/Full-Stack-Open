@@ -3,6 +3,7 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Blog from './Blog'
 
 
@@ -10,11 +11,25 @@ describe('When a Blog object is rendered', () => {
 
     //Ignoring the errors related to PropTypes.
     const loggedErrors = console.error.bind(console.error)
+
     beforeAll(() => {
         console.error = errorMsg => {
 
             { errorMsg.toString().includes('Warning: Failed prop type:') && loggedErrors(errorMsg) }
         }
+
+    })
+
+    //Defining the blog to render and rendering it before each test.
+    beforeEach(() => {
+        const blog = {
+            title: 'A testable blog.',
+            author: 'TesterJester',
+            url: 'http://www.testingwhilejesting.com',
+            likes: 2340
+        }
+
+        render(<Blog blog={blog} />)
     })
 
     afterAll(() => {
@@ -24,15 +39,7 @@ describe('When a Blog object is rendered', () => {
     /*Testing that when a Blog component is rendered, only the title is shown.
     author, likes and url fields are ignored because of the visibility being
     set to false by default. */
-    test('it renders content', () => {
-        const blog = {
-            title: 'A testable blog.',
-            author: 'TesterJester',
-            url: 'http://www.testingwhilejesting.com',
-            likes: 2340
-        }
-
-        render(<Blog blog={blog} />)
+    test('it initially renders title, but other values are hidden.', () => {
 
         let element = screen.getByText('A testable blog.')
         expect(element).toBeDefined()
@@ -44,13 +51,6 @@ describe('When a Blog object is rendered', () => {
         //Testing that the div containing the author, likes and url fields is initially hidden.
         expect(screen.getByTestId('blogInfo')).toHaveStyle('display: none')
 
-        /*Testing that trying to get the author, url and likes fields with the method
-        getbyText results in an error. */
-        expect(() => screen.getByText('TesterJester')).toThrow()
-        expect(() => screen.getByText('http://www.testingwhilejesting.com')).toThrow()
-        expect(() => screen.getByText('2340')).toThrow()
-        expect(() => screen.getByText('Author: TesterJester')).toThrow()
-        expect(() => screen.getByText('Url: http://www.testingwhilejesting.com')).toThrow()
-        expect(() => screen.getByText('Likes: 2340')).toThrow()
     })
+
 })

@@ -37,7 +37,7 @@ describe('When a Blog object is rendered', () => {
     })
 
     /*Testing that when a Blog component is rendered, only the title is shown.
-    author, likes and url fields are ignored because of the visibility being
+    author, likes and url fields are hidden because of the visibility being
     set to false by default. */
     test('it initially renders title, but other values are hidden.', () => {
 

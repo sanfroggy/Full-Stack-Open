@@ -110,6 +110,8 @@ describe('When a Blog object is rendered', () => {
 
     })
 
+    /*Testing that when the like button is clicked twice, the mock function provided as
+    an event handler is also called twice. */
     describe('When a Blog object is rendered and the like button is pressed', () => {
 
         test('The function is called the correct number of times.', async () => {

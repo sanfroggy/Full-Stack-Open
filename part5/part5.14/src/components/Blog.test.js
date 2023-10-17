@@ -9,7 +9,8 @@ import Blog from './Blog'
 
 describe('When a Blog object is rendered', () => {
 
-    //Ignoring the errors related to PropTypes.
+    /*Ignoring the errors related to PropTypes and defining 
+    a container variable for the querySelector. */
     const loggedErrors = console.error.bind(console.error)
     let container
 

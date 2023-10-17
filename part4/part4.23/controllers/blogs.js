@@ -93,7 +93,7 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 
 /*Defining the route for updating an existing blog with
 async / await, unless the given id is invalid and 
-displaying an error message. */
+returning an error message. */
 blogsRouter.put('/:id', async (request, response) => {
 
     blogToUpdate = await Blog.findById(request.params.id)

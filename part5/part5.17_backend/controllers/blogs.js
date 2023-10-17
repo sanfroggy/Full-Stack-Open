@@ -59,7 +59,8 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 })
 
 /*Defining the route for deleting an existing blog with
-async / await, unless the given id is invalid. */
+async / await, unless the given id is invalid. Returning
+an approppriate error message if given an invalid id. */
 blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 
     /*Using the define dmiddlewares to identify the logged in user

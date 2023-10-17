@@ -52,7 +52,9 @@ describe('When a Blog object is rendered', () => {
 
         //Testing that the div containing the author, likes and url fields is initially hidden.
         expect(screen.getByTestId('blogInfo')).toHaveStyle('display: none')
-
+        expect(screen.queryByText('TesterJester')).toBeNull()
+        expect(screen.queryByText('http://www.testingwhilejesting.com')).toBeNull()
+        expect(screen.queryByText('2340')).toBeNull()
     })
 
 
@@ -70,6 +72,9 @@ describe('When a Blog object is rendered', () => {
         element = screen.getByText('Title:')
         expect(element).toBeDefined()
         expect(element).toBeInTheDocument()
+        expect(screen.queryByText('TesterJester')).toBeNull()
+        expect(screen.queryByText('http://www.testingwhilejesting.com')).toBeNull()
+        expect(screen.queryByText('2340')).toBeNull()
 
         const div = container.querySelector('.blogInfoContainer')
         expect(div).toHaveStyle('display: none')
@@ -105,6 +110,10 @@ describe('When a Blog object is rendered', () => {
 
         await user.click(element)
 
+        expect(screen.queryByText('TesterJester')).toBeNull()
+        expect(screen.queryByText('http://www.testingwhilejesting.com')).toBeNull()
+        expect(screen.queryByText('2340')).toBeNull()
+        
         expect(button).toHaveTextContent('View')
         expect(div).toHaveStyle('display: none')
 

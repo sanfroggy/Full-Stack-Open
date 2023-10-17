@@ -50,7 +50,9 @@ describe('When a Blog object is rendered', () => {
 
         //Testing that the div containing the author, likes and url fields is initially hidden.
         expect(screen.getByTestId('blogInfo')).toHaveStyle('display: none')
-
+        expect(screen.queryByText('TesterJester')).toBeNull()
+        expect(screen.queryByText('http://www.testingwhilejesting.com')).toBeNull()
+        expect(screen.queryByText('2340')).toBeNull()
     })
 
 })

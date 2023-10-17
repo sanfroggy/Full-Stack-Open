@@ -27,6 +27,7 @@ describe('When blog app frontend is visited', function () {
     })
 
     describe('When user attempts to login', function () {
+        
         /*Testing that an existing user can login via the custom command
         connecting directly to the backend. */
         it('user can login with correct credentials via custom command', function () {

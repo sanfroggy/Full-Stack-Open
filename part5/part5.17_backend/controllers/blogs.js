@@ -37,7 +37,8 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 
     /*Saving the blog._id in the blog collection of the
     user as well and saving the user to the database
-    with the blog._id defined. */
+    with the blog._id defined. Returning an error
+    message if required data is missing. */
     if (!blog.title || !blog.url) {
         response.status(400).json({
             error: 'Blog must have a title and an url.'

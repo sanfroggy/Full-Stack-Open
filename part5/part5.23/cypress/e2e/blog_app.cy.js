@@ -206,8 +206,8 @@ describe('When blog app frontend is visited', function () {
             })
 
             /*Testing that when multiple blogs exists they are sorted according to their likes.
-            Also whenever a like is made, a blog is deleted or a new blog is added,
-            that would alter the order they are resorted accordingly. */
+            Also testing that whenever any operation is made, which would alter the order 
+            the blogs are resorted accordingly. */
             it('when there are multiple, the blogs are sorted according to likes', function () {
                 cy.createBlog({
                     title: 'A jedi master am i', author: 'Yoda',

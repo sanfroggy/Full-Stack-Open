@@ -42,7 +42,7 @@ describe('When blog app frontend is visited', function () {
         connecting with invalid credentials. */
         it('user cannot login with incorrect credentials via custom command', function () {
 
-            cy.loginWithResponse({ username: 'SanTheBlogger', password: 'V‰‰r‰Salis' }).should( 'eq' , 401 )
+            cy.loginWithResponse({ username: 'SanTheBlogger', password: 'V√§√§r√§Salis' }).should( 'eq' , 401 )
             cy.contains('Currently logged in as Sampson.').should('not.exist')
 
         })
@@ -63,7 +63,7 @@ describe('When blog app frontend is visited', function () {
             function () {
                 cy.contains('Login')
                 cy.get('#usrInput').type('SanTheBlogger')
-                cy.get('#pwdInput').type('V‰‰r‰Salis')
+                cy.get('#pwdInput').type('V√§√§r√§Salis')
                 cy.get('#loginBtn').click()
                 cy.get('.errorMsg').
                     should('contain', 'Invalid username or password').
@@ -137,7 +137,8 @@ describe('When blog app frontend is visited', function () {
                     .parent().should('contain', '2')
             })
 
-
+            /*Testing that when a a blog exists and is added by the currently logged in user
+            it can also be removed by the currently logged in user, by clicking the remove button. */
             it('blog can be removed by the user that added it', function () {
                 cy.get('#blogsContainer').should('contain', 'Photography')
                 cy.contains('Photography').parent().contains('View').as('viewButton')

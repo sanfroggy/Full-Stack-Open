@@ -50,7 +50,7 @@ describe('When blog app frontend is visited', function () {
         connecting with invalid credentials. */
         it('user cannot login with incorrect credentials via custom command', function () {
 
-            cy.loginWithResponse({ username: 'SanTheBlogger', password: 'V‰‰r‰Salis' }).should( 'eq' , 401 )
+            cy.loginWithResponse({ username: 'SanTheBlogger', password: 'V√§√§r√§Salis' }).should( 'eq' , 401 )
             cy.contains('Currently logged in as Sampson.').should('not.exist')
 
         })
@@ -71,7 +71,7 @@ describe('When blog app frontend is visited', function () {
             function () {
                 cy.contains('Login')
                 cy.get('#usrInput').type('SanTheBlogger')
-                cy.get('#pwdInput').type('V‰‰r‰Salis')
+                cy.get('#pwdInput').type('V√§√§r√§Salis')
                 cy.get('#loginBtn').click()
                 cy.get('.errorMsg').
                     should('contain', 'Invalid username or password').

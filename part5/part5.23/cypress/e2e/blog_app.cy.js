@@ -118,9 +118,8 @@ describe('When blog app frontend is visited', function () {
                 })
             })
 
-            /*Testing that when a new blog is added via the new blog form the like button
-            exists and can be clicked. Clicking a like button adds one more like to the
-            likes of the correct blog. */
+            /*Testing that when a new blog is added the like button exists and can be clicked.
+            Clicking the like button adds one more like to the likes of the correct blog. */
             it('that blog can be liked', function () {
 
                 cy.createBlog({

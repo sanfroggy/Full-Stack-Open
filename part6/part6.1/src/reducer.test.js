@@ -81,6 +81,8 @@ describe('unicafe reducer', () => {
         })
     })
 
+    /*Testing that when the reducer is called with the action "ZERO", the value of
+    the fields in the returned state is 0. */
     test('zero resets the reviews', () => {
         const action = {
             type: 'ZERO'

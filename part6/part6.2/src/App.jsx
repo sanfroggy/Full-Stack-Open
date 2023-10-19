@@ -19,24 +19,29 @@ const App = () => {
         })
     }
 
+    //Defining a function to use the "OK" action of the reducer.
     const ok = () => {
         store.dispatch({
             type: 'OK'
         })
     }
 
+    //Defining a function to use the "BAD" action of the reducer.
     const bad = () => {
         store.dispatch({
             type: 'BAD'
         })
     }
 
+    //Defining a function to use the "ZERO" action of the reducer.
     const reset = () => {
         store.dispatch({
             type: 'ZERO'
         })
     }
 
+    /*Displaying the buttons and the number of related reviews in the store
+    with the use of store.getState. */
     return (
         <div>      
             <button onClick={reset}>Reset stats</button>
@@ -52,7 +57,6 @@ const App = () => {
                 <button onClick={bad}>Bad</button></div>
         </div>
     )
-}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

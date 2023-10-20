@@ -60,7 +60,9 @@ const anecdoteSlice = createSlice({
             state.push(asObject(action.payload))
         },
 
-
+        /*When the sort action is dispatc´hed, the sort method is used
+        to sort a copy of the array of anecdotes by votes and return the 
+        sorted array. */
         sort(state) {
             return [...state].sort((a, b) => b.votes - a.votes)
         }

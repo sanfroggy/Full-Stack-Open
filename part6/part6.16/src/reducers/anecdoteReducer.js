@@ -50,7 +50,9 @@ const anecdoteSlice = createSlice({
     }
 })
 
-//Export the reducer function and action creators.
+/*Exporting the reducer function and action creators to get the initial
+array of anecdotes from db.json, to vote for an anecdote, to create a new one
+and to sort and set the array of anecdotes. */
 export default anecdoteSlice.reducer
 
 export const initializeAnecdotes = () => {

@@ -1,3 +1,4 @@
+//Importing the useDispatch, useSelector hooks and the action creators.
 import { useSelector, useDispatch } from 'react-redux'
 import { voteForAnecdote, sortAnecdotes }
     from '../reducers/anecdoteReducer'

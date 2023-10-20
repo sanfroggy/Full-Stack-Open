@@ -7,8 +7,8 @@ import Notification from './components/Notification'
 
 const App = () => {
 
-    /*Displaying the filter input field, array of anecdotes and the form
-    used to create new ones. */
+    /*Displaying the notification message, filter input field, 
+    array of anecdotes and the form used to create new ones. */
     return (
         <div>
             <h2>Anecdotes: </h2>

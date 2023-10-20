@@ -9,10 +9,15 @@ const App = () => {
 
     //Defining a function for voting an anecdote.
     const vote = (id) => {
-        console.log('vote', id)
+        dispatch({
+            type: 'VOTE',
+            payload: {
+                id: id
+            }
+        })
     }
 
-    /*Displaying the array of anecdotes and a form to 
+    /*Displaying the array of anecdotes and a form to
     create new anecdotes. */
     return (
         <div>
@@ -28,10 +33,10 @@ const App = () => {
                     </div>
                 </div>
             )}
-            <h2>create new</h2>
+            <h2>Create new</h2>
             <form>
                 <div><input /></div>
-                <button>create</button>
+                <button>Create</button>
             </form>
         </div>
     )

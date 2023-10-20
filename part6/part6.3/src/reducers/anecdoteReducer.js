@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 //Creating an array of anecdote strings initially displayed.
 const anecdotesAtStart = [
     'If it hurts, do it more often',
@@ -24,10 +25,25 @@ const asObject = (anecdote) => {
 //Defining the initialState of anecdotes as an array of objects.
 const initialState = anecdotesAtStart.map(asObject)
 
-//Defining a reducer that logs states and actions and returns state.
+/*Defining a reducer that allows the user to vote an anecdote
+with the action.type "VOTE". */
 const reducer = (state = initialState, action) => {
-    console.log('state now: ', state)
-    console.log('action', action)
+
+    switch (action.type) {
+        case "VOTE":
+            const votedAnecdote = state.find(anecdote =>
+                anecdote.id === action.payload.id)
+
+            const updatedAnecdote = {
+                ...votedAnecdote,
+                votes: votedAnecdote.votes + 1
+            }
+
+            return state.map(anecdote =>
+                anecdote.id === updatedAnecdote.id
+                    ? updatedAnecdote : anecdote)
+        default: return state
+    }
 
     return state
 }

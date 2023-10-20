@@ -21,7 +21,8 @@ const AnecdoteList = () => {
         }
     })
 
-    //Using useDispatch hook to define a function for voting an anecdote.
+    /*Using useDispatch hook to define a function for voting an anecdote and
+    show a notification for 5 seconds using setTimeout. */
     const vote = (id) => {
         const anecdote = anecdotes.find(anecdote => anecdote.id === id)
         dispatch(voteForAnecdote(id))

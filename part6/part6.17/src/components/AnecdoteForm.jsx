@@ -8,10 +8,11 @@ const AnecdoteForm = () => {
     //Defining a variable for the the useDispatch hook.
     const dispatch = useDispatch()
 
-    /*Using async/await, createNew defined in anecdoteService and
-    useDispatch hook to define a function for adding an anecdote and
-    show a notification for 5 seconds using setTimeout. */
-    const addAnecdote = (event) => {
+    /*Using async/await, createAnecdote function imported from anecdoteReducer, 
+    setMessage function imported from notificationReducer and useDispatch hook 
+    to define a function for adding an anecdote and showing a notification for 
+    5 seconds using setTimeout. */
+    const addAnecdote = async (event) => {
 
         event.preventDefault()
 

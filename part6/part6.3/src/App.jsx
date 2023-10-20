@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 const App = () => {
 
     const anecdotes = useSelector(state => state)
-    // eslint-disable-next-line no-unused-vars
     const dispatch = useDispatch()
 
     //Defining a function for voting an anecdote.

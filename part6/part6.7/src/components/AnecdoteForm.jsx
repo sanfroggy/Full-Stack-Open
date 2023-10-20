@@ -18,7 +18,7 @@ const AnecdoteForm = () => {
         dispatch(sortAnecdotes())
     }
 
-    //Displaying the form to create new anecdotes.
+    //Returning the form to create new anecdotes.
     return (
         <div>
             <h2> Create new: </h2>

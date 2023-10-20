@@ -42,10 +42,9 @@ const reducer = (state = initialState, action) => {
             return state.map(anecdote =>
                 anecdote.id === updatedAnecdote.id
                     ? updatedAnecdote : anecdote)
+            
         default: return state
     }
-
-    return state
 }
 
 export default reducer

@@ -1,4 +1,4 @@
-//Importing the useSelector and useDispatch hooks.
+//Importing the useSelector, useDispatch hooks and the action creators.
 import { useSelector, useDispatch } from 'react-redux'
 import { createNewAnecdote, voteForAnecdote, sortAnecdotes }
     from './reducers/anecdoteReducer'

@@ -12,6 +12,8 @@ const App = () => {
         console.log('vote', id)
     }
 
+    /*Displaying the array of anecdotes and a form to 
+    create new anecdotes. */
     return (
         <div>
             <h2>Anecdotes</h2>

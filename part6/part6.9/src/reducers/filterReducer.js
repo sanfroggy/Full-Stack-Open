@@ -7,7 +7,10 @@ const filterAnecdotes = (filter) => {
     }
 }
 
-
+/*Defining a filter reducer, retuning the string ALL
+as a default state, but when the SET_FILTER action is
+dispatched it returns the payload of the action, which
+is the string value to filter by. */
 const filterReducer = (state = 'ALL', action) => {
     switch (action.type) {
         case 'SET_FILTER':

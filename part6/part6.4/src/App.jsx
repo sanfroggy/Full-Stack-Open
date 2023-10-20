@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const App = () => {
 
+    //Defining variables for the list of anecdotes and the useDispatch hook.
     const anecdotes = useSelector(state => state)
     const dispatch = useDispatch()
 

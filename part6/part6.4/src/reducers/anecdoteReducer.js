@@ -25,11 +25,16 @@ const asObject = (anecdote) => {
 //Defining the initialState of anecdotes as an array of objects.
 const initialState = anecdotesAtStart.map(asObject)
 
-/*Defining a reducer that allows the user to vote an anecdote
-with the action.type "VOTE". */
+/*Defining a reducer that operations the action.types "VOTE" and "NEW".
+If the action received is neither the state is returned as such. */
 const reducer = (state = initialState, action) => {
 
     switch (action.type) {
+
+        /*If the action type is "VOTE" find the anecdote with the
+        id received in the action.payload, create a copy
+        of it with the updated number of likes and return a new
+        state with the updated anecdote object. */
         case "VOTE":
             const votedAnecdote = state.find(anecdote =>
                 anecdote.id === action.payload.id)
@@ -42,14 +47,19 @@ const reducer = (state = initialState, action) => {
             return state.map(anecdote =>
                 anecdote.id === updatedAnecdote.id
                     ? updatedAnecdote : anecdote)
-        default: return state
 
+        /*If the action type is "NEW" find get the desired content
+        received in the action.payload, create a new anecdote object
+        with the asObject function and return a new state with the 
+        created anecdote object. */
         case "NEW":
             const newAnecdote = asObject(action.payload.content)
             return [...state, newAnecdote]
-    }
 
-    return state
+        default: return state
+
+        
+    }
 }
 
 export default reducer

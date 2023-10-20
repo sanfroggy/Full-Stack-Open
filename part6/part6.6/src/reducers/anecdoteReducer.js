@@ -22,6 +22,8 @@ const asObject = (anecdote) => {
     }
 }
 
+/*Defining an "action creator" for creating a new anecdote. 
+It returns an action with the received parameters. */
 const createNewAnecdote = (anecdoteString) => {
     return {
         type: 'NEW',
@@ -31,6 +33,8 @@ const createNewAnecdote = (anecdoteString) => {
     }
 }
 
+/*Defining an "action creator" for voting an anecdote. 
+It returns an action with the received parameters. */
 const voteForAnecdote = (id) => {
     return {
         type: 'VOTE',
@@ -40,6 +44,8 @@ const voteForAnecdote = (id) => {
     }
 }
 
+/*Defining an "action creator" for sorting the anecdotes. 
+It returns an action of type "SORT". */
 const sortAnecdotes = () => {
     return {
         type: 'SORT'

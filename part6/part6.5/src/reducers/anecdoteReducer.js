@@ -56,6 +56,8 @@ const reducer = (state = initialState, action) => {
             const newAnecdote = asObject(action.payload.content)
             return [...state, newAnecdote]
 
+        /*If the action type is "SORT" return an array anecdotes sorted 
+        according to the number of likes. */
         case "SORT":
             return [...state].sort((a, b) => b.votes - a.votes)
 

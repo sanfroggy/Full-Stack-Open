@@ -5,7 +5,8 @@ import filterReducer from './reducers/filterReducer'
 import notificationReducer from './reducers/notificationReducer'
 
 /*Defining a store for storing states with configureStore 
-and the imported reducers and exporting the store. */
+and the imported anecdotes, filter and message reducers 
+and exporting the store. */
 const store = configureStore({
     reducer: {
         anecdotes: anecdoteReducer,

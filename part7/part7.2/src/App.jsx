@@ -47,6 +47,9 @@ const AnecdoteList = ({ anecdotes }) => (
     </div>
 )
 
+/*Defining an Anecdote component containing more specific information about
+one anecdote. Id is received from the url with useParams, the specific anecdote
+is searched for with find and content, author, votes and info fields are returned. */
 const Anecdote = ({ anecdotes }) => {
     const id = useParams().id
     const anecdote = anecdotes.find(anecdote =>

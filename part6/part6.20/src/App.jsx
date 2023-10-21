@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 
 const App = () => {
 
-      //Defining a function to handle adding a vote. 
+    //Defining a function to handle adding a vote. 
     const handleVote = (anecdote) => {
         console.log('vote')
     }

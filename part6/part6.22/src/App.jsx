@@ -19,7 +19,7 @@ const App = () => {
         }
     })
 
-    
+    //Defining a function to update the votes of an existing anecdote.
     const handleVotes = (anecdote) => {
         updateMutation.mutate({ ...anecdote, votes: anecdote.votes + 1})
     }

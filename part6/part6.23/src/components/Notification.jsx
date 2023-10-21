@@ -14,7 +14,10 @@ const Notification = () => {
     /*Creating a variable for the value of the message
     to be displayed. */
     const message = useMessageValue()
-   
+
+    /*Returning a div with the defined inline-style and
+    the value of message, if message has a value. If not
+    null is returned. */
     if (message) {
         return (
             <div style={style}>

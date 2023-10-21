@@ -9,7 +9,8 @@ const AnecdoteForm = () => {
 
     /*Defining variables for useQueryClient and useMutation, that are used to
     add a newAnecdote with the createAnecdote function and to have the list update 
-    immediately after a successful operation with invalidateQueries. */
+    immediately after a successful operation with invalidateQueries. On error
+    the imported useMessageDispatch function is used to display an error message.*/
     const queryClient = useQueryClient()
     const newAnecdoteMutation = useMutation({mutationFn: createAnecdote,
         onSuccess: () => {

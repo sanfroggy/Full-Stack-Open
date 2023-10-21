@@ -20,6 +20,9 @@ const notificationSlice = createSlice({
     }
 })
 
+/*Exporting the reducer function and action creators to set the 
+message for the Notification component and to reset the message after
+a certain period of time. */
 export default notificationSlice.reducer
 
 export const { setMessage, resetMessage } = notificationSlice.actions

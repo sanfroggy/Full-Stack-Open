@@ -4,6 +4,9 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 const AnecdoteForm = () => {
 
+    /*Defining variables for useQueryClient and useMutation, that are used to
+    add a newAnecdote with the createAnecdote function and to have the list update 
+    immediately after a successful operation with invalidateQueries. */
     const queryClient = useQueryClient()
     const newAnecdoteMutation = useMutation({mutationFn: createAnecdote,
         onSuccess: (anecdote) => {

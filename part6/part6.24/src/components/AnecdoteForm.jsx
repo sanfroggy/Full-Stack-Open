@@ -18,7 +18,6 @@ const AnecdoteForm = () => {
         },
         onError: (response) => { 
             const payload = response.response.data.error
-            console.log(payload)
             messageDispatch({
                 type: 'SHOW', payload
             })

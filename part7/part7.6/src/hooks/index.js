@@ -19,7 +19,8 @@ const useField = (type) => {
         setValue('')
     }
 
-
+    /*Putting all variables and functions to be passed as props,
+    to the input field into an object that is then returned. */
     const objectProps = {
         type,
         value,

@@ -203,7 +203,8 @@ const App = () => {
 
     /*Defining a method to add a new anecdote. The new anecdote is added to
     the end of the anecdote array using setAnecdotes and concat. An id is
-    also generated randomly. A notification is also set and hidden after 5 seconds. */
+    also generated randomly. A notification is also set, displayed for 5 seconds 
+    and hidden again with setTimeout. */
     const addNew = (anecdote) => {
         anecdote.id = Math.round(Math.random() * 10000)
         setAnecdotes(anecdotes.concat(anecdote))

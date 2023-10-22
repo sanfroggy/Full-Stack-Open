@@ -4,7 +4,7 @@
 
 /*Importing useState hook, custom useField hook and routing components 
 from React Router library. */
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {BrowserRouter as Router, Routes,
     Route, Link, useParams, useNavigate
 } from 'react-router-dom'

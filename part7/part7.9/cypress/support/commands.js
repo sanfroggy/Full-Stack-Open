@@ -12,10 +12,10 @@
 // -- This is a parent command --
 Cypress.Commands.add('login', ({ username, password }) => {
     cy.request('POST', 'http://localhost:3001/api/login', { username, password }).then(({ body }) => {
-        localStorage.setItem('loggedUserData', JSON.stringify(body));
-        cy.visit('http://localhost:3000');
-    });
-});
+        localStorage.setItem('loggedUserData', JSON.stringify(body))
+        cy.visit('http://localhost:3000')
+    })
+})
 
 Cypress.Commands.add('loginWithResponse', ({ username, password }) => {
     cy.request({
@@ -24,9 +24,9 @@ Cypress.Commands.add('loginWithResponse', ({ username, password }) => {
         failOnStatusCode: false,
         body: JSON.stringify({ username, password }),
     }).then((response) => {
-        return response.status;
-    });
-});
+        return response.status
+    })
+})
 
 Cypress.Commands.add('createBlog', ({ title, author, url, likes }) => {
     if (!likes) {
@@ -37,7 +37,7 @@ Cypress.Commands.add('createBlog', ({ title, author, url, likes }) => {
             headers: {
                 Authorization: `Bearer ${JSON.parse(localStorage.getItem('loggedUserData')).token}`,
             },
-        });
+        })
     } else {
         cy.request({
             method: 'POST',
@@ -46,10 +46,10 @@ Cypress.Commands.add('createBlog', ({ title, author, url, likes }) => {
             headers: {
                 Authorization: `Bearer ${JSON.parse(localStorage.getItem('loggedUserData')).token}`,
             },
-        });
+        })
     }
-    cy.visit('http://localhost:3000');
-});
+    cy.visit('http://localhost:3000')
+})
 
 //
 //

@@ -11,7 +11,7 @@ const Notification = (props) => {
         borderRadius: '4px',
         padding: '8px',
         marginBottom: '25px',
-    };
+    }
     const errorStyle = {
         color: 'darkred',
         background: 'lightgrey',
@@ -20,29 +20,29 @@ const Notification = (props) => {
         borderRadius: '4px',
         padding: '8px',
         marginBottom: '25px',
-    };
+    }
 
     /*If no message is defined, nothing is returned. If a message
     is defined the display style is defined according to the
     type of message displayed. */
     if (props.msg === null && props.errorMsg === null) {
-        return null;
+        return null
     } else {
         if (props.errorMsg === null && props.msg !== null) {
             return (
                 <div className="successMsg" style={successStyle}>
                     {props.msg}
                 </div>
-            );
+            )
         }
         if (props.msg === null && props.errorMsg !== null) {
             return (
                 <div className="errorMsg" style={errorStyle}>
                     {props.errorMsg}
                 </div>
-            );
+            )
         }
     }
-};
+}
 
-export default Notification;
+export default Notification

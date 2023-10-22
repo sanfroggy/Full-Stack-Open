@@ -1,6 +1,6 @@
 //Importing the useState and useEffect hooks as well as prop-types.
-import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 //Defining a Blog component for displaying the data of a single blog.
 const Blog = ({ blog, updateMethod, loggedUser, deleteMethod }) => {
@@ -14,51 +14,51 @@ const Blog = ({ blog, updateMethod, loggedUser, deleteMethod }) => {
         alignItems: 'center',
         backgroundColor: '#D7DBDD',
         color: 'black',
-    };
+    }
 
     const titleButtonStyle = {
         border: 'none',
         backgroundColor: '#D7DBDD',
         fontSize: 14,
-    };
+    }
 
     /*Creating "state variables" to control the visibility of elements
     and the label of the view/hide button. */
-    const [visible, setVisible] = useState(false);
-    const [removable, setRemovable] = useState(false);
-    const showWhenVisible = { display: visible ? '' : 'none' };
-    const [buttonLabel, setButtonLabel] = useState('View');
+    const [visible, setVisible] = useState(false)
+    const [removable, setRemovable] = useState(false)
+    const showWhenVisible = { display: visible ? '' : 'none' }
+    const [buttonLabel, setButtonLabel] = useState('View')
 
     /*Using the useEffect hook to check if the blog was created
     by the same user that is currently logged in and to set
     the value of removable "state variable" correctly. */
     useEffect(() => {
         if (blog.user === undefined || blog.user === null) {
-            setRemovable(false);
+            setRemovable(false)
         } else {
             if (blog.user.username === loggedUser.username) {
-                setRemovable(true);
+                setRemovable(true)
             } else {
-                setRemovable(false);
+                setRemovable(false)
             }
         }
-    }, [blog.user, loggedUser]);
+    }, [blog.user, loggedUser])
 
     //Creating a function to toggle visibility and button label.
     const toggleVisibility = () => {
-        setVisible(!visible);
+        setVisible(!visible)
         if (buttonLabel === 'View') {
-            setButtonLabel('Hide');
+            setButtonLabel('Hide')
         }
         if (buttonLabel === 'Hide') {
-            setButtonLabel('View');
+            setButtonLabel('View')
         }
-    };
+    }
 
     /*Creating a function to increase the likes of a blog by one
     when the like button is pressed. */
     const handleLikes = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
 
         updateMethod({
             id: blog.id,
@@ -67,15 +67,15 @@ const Blog = ({ blog, updateMethod, loggedUser, deleteMethod }) => {
             likes: blog.likes + 1,
             url: blog.url,
             user: blog.user,
-        });
-    };
+        })
+    }
 
     /*Creating a function to send the id of the blog to the delete function
     received as a parameter. */
     const handleDelete = async (event) => {
-        event.preventDefault();
-        deleteMethod(blog.id);
-    };
+        event.preventDefault()
+        deleteMethod(blog.id)
+    }
 
     /*Returning the elements desired to be visible by using the
     toggleVisibility function and the defined showWhenVisible style.
@@ -116,8 +116,8 @@ const Blog = ({ blog, updateMethod, loggedUser, deleteMethod }) => {
                 )}
             </div>
         </div>
-    );
-};
+    )
+}
 
 //Using prop-types to give a warning if necessary values are not received correctly.
 Blog.propTypes = {
@@ -125,6 +125,6 @@ Blog.propTypes = {
     updateMethod: PropTypes.func.isRequired,
     loggedUser: PropTypes.object.isRequired,
     deleteMethod: PropTypes.func.isRequired,
-};
+}
 
-export default Blog;
+export default Blog

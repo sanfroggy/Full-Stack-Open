@@ -1,5 +1,5 @@
 //Importing prop-types
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 /*Defining a LoginForm component with text and password type input
 fields and a submit button. The required methods and data are received
@@ -22,8 +22,8 @@ const LoginForm = ({ loginMethod, handleUsrInputChangeMethod, handlePwdInputChan
                 </button>
             </div>
         </form>
-    );
-};
+    )
+}
 
 //Using prop-types to give a warning if necessary values are not received correctly.
 LoginForm.propTypes = {
@@ -32,6 +32,6 @@ LoginForm.propTypes = {
     handlePwdInputChangeMethod: PropTypes.func.isRequired,
     usr: PropTypes.string.isRequired,
     pwd: PropTypes.string.isRequired,
-};
+}
 
-export default LoginForm;
+export default LoginForm

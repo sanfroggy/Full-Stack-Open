@@ -1,3 +1,4 @@
+//Importing the hooks useState, useEffect and a custom hook useCountry.
 import React, { useState } from 'react'
 import { useCountry } from './hooks'
 

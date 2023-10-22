@@ -151,6 +151,8 @@ const CreateNew = (props) => {
 
 }
 
+/*Defining a component thart contains a div to display the string received 
+as a message to the user. */
 const Notification = ({ message }) => {
 
     /*Defining an inline-style for the message

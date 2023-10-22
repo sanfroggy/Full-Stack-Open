@@ -22,6 +22,9 @@ const Notification = (props) => {
         marginBottom: '25px',
     };
 
+    /*If no message is defined, nothing is returned. If a message
+    is defined the display style is defined according to the
+    type of message displayed. */
     if (props.msg === null && props.errorMsg === null) {
         return null;
     } else {

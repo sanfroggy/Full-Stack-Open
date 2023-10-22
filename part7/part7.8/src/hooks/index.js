@@ -46,6 +46,7 @@ const useResource = (baseUrl) => {
 const useField = (type) => {
     const [value, setValue] = useState('')
 
+    //Defining an onChange function to pass as props to the input field.
     const onChange = (event) => {
         setValue(event.target.value)
     }

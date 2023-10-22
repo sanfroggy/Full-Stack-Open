@@ -36,6 +36,7 @@ const useResource = (baseUrl) => {
         get
     }
 
+    //Returning resources variable and the service object.
     return [
         resources,
         service
@@ -51,6 +52,7 @@ const useField = (type) => {
         setValue(event.target.value)
     }
 
+    //Returning type and value variables and the onChange function.
     return {
         type,
         value,

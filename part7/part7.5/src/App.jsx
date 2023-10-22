@@ -125,6 +125,8 @@ const CreateNew = (props) => {
         navigate('/')
     }
 
+    /*Defining a function to reset the values of the input fields
+    , when the reset button is pressed. */
     const handleReset = (e) => {
         e.preventDefault()
         content.reset()

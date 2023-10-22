@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { useCountry } from './hooks'
 
-//Defining a custom hook useField to use with the input fields.
+//Defining a custom hook useField to easily give props to the input fields.
 const useField = (type) => {
   const [value, setValue] = useState('')
 

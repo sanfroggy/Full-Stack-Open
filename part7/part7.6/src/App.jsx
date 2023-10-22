@@ -129,7 +129,8 @@ const CreateNew = (props) => {
     }
 
     /*Defining a function to reset the values of the input fields, 
-    when the reset button is pressed. */
+    when the reset button is pressed using the reset function
+    of the imported useField hook. */
     const handleReset = (e) => {
         e.preventDefault()
         content.reset()

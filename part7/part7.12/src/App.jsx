@@ -1,7 +1,7 @@
 /*Importing the useDispatch, useSelector, useState and useRef hooks, as well as the necessary
 components and services. Also getting the setMessageDisplay and create action creators from
 the reducers. */
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useState, useRef } from 'react'
 import Blogs from './components/Blogs'
 import blogService from './services/Blogs'
@@ -21,8 +21,6 @@ const App = () => {
     is used to refer to the method in Toggleable component, that is used to show
     and hide other components. */
     const blogFormRef = useRef()
-    const blogs = useSelector(state => state.blogs)
-    //const [blogs, setBlogs] = useState([])
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 

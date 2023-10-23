@@ -11,6 +11,8 @@ const Blogs = (props) => {
     const dispatch = useDispatch()
     const blogs = useSelector((state) => state.blogs)
 
+    /*Initializing the blogs array using the updateBlogsState method
+    imported from blogReducer, on first render. */
     useEffect(() => {
         dispatch(updateBlogsState())
     }, [])

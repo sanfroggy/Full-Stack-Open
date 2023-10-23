@@ -59,33 +59,6 @@ const App = () => {
 
     }
 
-    /*Defining a method to be passed on to the Blogs component. This method is
-    responsible for getting the authorization token from the local storage, deleting
-    a blog from the database, when the remove button is pressed and displaying a message
-    if the deletion is successful. If not the exception is caught and a message is displayed.
-    The defined blogService is used to pass the updated blog data to the Node backend.
-    The array is also sorted after the deletion. */
-    /*const deleteBlog = async (blogId) => {
-        try {
-            const blogtitle = blogs.find((blog) => blog.id === blogId).title
-            if (
-                window.confirm(`Do you really want to remove ${blogtitle}
-            from the list of blogs?`)
-            ) {
-                const token = JSON.parse(window.localStorage.getItem('loggedUserData')).token
-                if (token) {
-                    blogService.setToken(token)
-                    await blogService.deleteBlog(blogId)
-                    dispatch(setMessageDisplay(`${blogtitle} was successfully deleted.`, false, 2.5))
-                    //const newArray = blogs.filter((blog) => blog.id !== blogId)
-                    //setBlogs(newArray.sort((a, b) => b.likes - a.likes))
-                }
-            }
-        } catch (exception) {
-            dispatch(setMessageDisplay(exception.response.data.error, true, 2.5))
-        }
-    }*/
-
     /*Defining a method to be passed on to the loginFrom component. This method is
     responsible for the login event, when the form is submitted. The data of the user
     is returned in the response and stored in the user variable if the login is succesful.

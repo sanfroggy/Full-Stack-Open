@@ -79,8 +79,6 @@ const App = () => {
             setUser(response)
             setUsername('')
             setPassword('')
-            //const unsorted = await blogService.getAll()
-            //setBlogs([...unsorted].sort((a, b) => b.likes - a.likes))
         } catch (exception) {
             /*Setting the errorMessage to be passed on to the store for the
             Notification component, in the case of a failed login attempt. */

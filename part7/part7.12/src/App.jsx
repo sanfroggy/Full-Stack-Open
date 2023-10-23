@@ -80,6 +80,7 @@ const App = () => {
             setUsername('')
             setPassword('')
         } catch (exception) {
+            
             /*Setting the errorMessage to be passed on to the store for the
             Notification component, in the case of a failed login attempt. */
             dispatch(setMessageDisplay(exception.response.data.error, true, 2.5))

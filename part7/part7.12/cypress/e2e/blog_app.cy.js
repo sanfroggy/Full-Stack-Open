@@ -43,7 +43,7 @@ describe('When blog app frontend is visited', function () {
             cy.contains('Currently logged in as Sampson.')
         })
 
-        /*Testing that an existing user cannot login via the custom command
+        /*Testing that an existing user cannot login via the custom command if
         connecting with invalid credentials. */
         it('user cannot login with incorrect credentials via custom command', function () {
             cy.loginWithResponse({ username: 'SanTheBlogger', password: 'VääräSalis' }).should('eq', 401)

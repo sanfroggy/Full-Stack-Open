@@ -42,7 +42,7 @@ const blogSlice = createSlice({
 
         },
 
-
+        //Defining an action to be able to remove a Blog object in the array of blogs.
         remove(state, action) {
             const id = action.payload
             state.filter(blog => {

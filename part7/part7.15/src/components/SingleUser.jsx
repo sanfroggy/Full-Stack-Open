@@ -8,7 +8,7 @@ const SingleUser = ({ user }) => {
                 <h2>{user.name}</h2>
                 <p>Added blogs: </p>
                 {user.blogs.map((blog) =>
-                    <ul key={blog.id}>{blog.title}</ul>
+                    <li key={blog.id}>{blog.title}</li>
                 )}
             </div>
         )

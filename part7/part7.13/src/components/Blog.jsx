@@ -1,5 +1,5 @@
 /*Importing the useState, useDispatch and useEffect hooks as well as prop-types
-and the updateBlogLikes method. */
+and the updateBlogLikes and removeBlog methods. */
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'

@@ -3,7 +3,6 @@ of a single user and blogs created by that user. */
 const SingleUser = ({ user }) => {
 
     if (user) {
-        console.log(user)
         return (
             <div>
                 <h2>{user.name}</h2>

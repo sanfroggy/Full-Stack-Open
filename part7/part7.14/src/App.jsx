@@ -70,6 +70,8 @@ const App = () => {
         dispatch(login({ username, password }))
     }
 
+    /*Defining a component returning all other components present in the blog view when
+    in root route. */
     const BlogView = () => {
         return (
             <div>

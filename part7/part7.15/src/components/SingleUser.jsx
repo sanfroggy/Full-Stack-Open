@@ -1,4 +1,5 @@
-
+/*Defining and exporting a component containing the name
+of a sungle user and blogs created by that user. */
 const SingleUser = ({ user }) => {
 
     if (user) {

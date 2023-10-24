@@ -1,9 +1,12 @@
+//Importing the createSlice function and the defined userService.
 import { createSlice } from '@reduxjs/toolkit'
 import userService from '../services/Users'
 
-//Defining a reducer with the createSlice function. As an initialState it has an empty array.
+/*Defining a reducer with the createSlice function. As an initialState it 
+has an empty array. */
 const initialState = []
 
+//Defining a reducer to allow setting and getting User objects from the store.
 const userSlice = createSlice({
     name: 'users',
     initialState,

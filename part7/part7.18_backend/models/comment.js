@@ -1,11 +1,11 @@
 //Defining the constants for mongoose and Comment.
 const mongoose = require('mongoose')
-const Comment = require('./comment')
 
 /*Define a schema to use as a model for a Comment object 
 to be saved to MongoDB. */
 const commentSchema = new mongoose.Schema({
     content: String,
+    blog: String,
 })
 
 /*Define the properties of the objects that are returned by the toJSON method.

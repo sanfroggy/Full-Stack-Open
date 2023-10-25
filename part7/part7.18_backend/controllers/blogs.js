@@ -65,9 +65,11 @@ an appropriate error message is returned. */
 blogsRouter.post('/:id/comments', async (request, response) => {
     const body = request.body
     const blog = await Blog.findById(request.params.id)
+    //const comments = await Comment.find({})
 
     const comment = new Comment({
         content: body.content,
+        blog: blog.id,
     })
 
     /*If the blog is found from the MongoDB database it is saved
@@ -99,12 +101,17 @@ blogsRouter.post('/:id/comments', async (request, response) => {
 async / await, unless the given id is invalid. Returning
 an approppriate error message if given an invalid id. */
 blogsRouter.delete('/:id', userExtractor, async (request, response) => {
+
     /*Using the define dmiddlewares to identify the logged in user
     by decoding the jtw authorization token and making sure that 
     only the user who has created the blog, can delete it. */
     const blogToDelete = await Blog.findById(request.params.id)
-
     const user = request.user
+    const id = blogToDelete.id
+
+    //Deleting all the Comment objects related to the blog to be deleted.
+    const comments = Comment.find({})
+    await comments.deleteMany({ blog: id.toString()})
 
     if (user.id.toString() !== blogToDelete.user.toString()) {
         return response.status(401).json({ error: 'Unauthorized.' })

@@ -95,6 +95,8 @@ const App = () => {
 
     }
 
+    /*Creating css inline styles for the style of the nav bar display and
+    the links in it. */
     const blogStyle = {
         border: 'solid',
         borderWidth: 2.5,

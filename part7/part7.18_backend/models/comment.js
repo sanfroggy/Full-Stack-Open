@@ -19,4 +19,5 @@ commentSchema.set('toJSON', {
     },
 })
 
+//Export the Comment object model.
 module.exports = mongoose.model('Comment', commentSchema)

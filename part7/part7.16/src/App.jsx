@@ -85,7 +85,7 @@ const App = () => {
     components are rendered. If not, the Notification component, the form to create a new blog,
     the list of currently existing blogs and the name of the logged in user are shown,
     as well as the logout button. And the Togglable component is used to make the blog
-    creation form hideable Router for the list of blogs and a singular blog view are also
+    creation form hideable. Routes for the list of blogs and a singular blog view are also
     defined here. */
     if (loggedUser) {
         return (

@@ -5,7 +5,7 @@ import blogService from '../services/Blogs'
 import loginService from '../services/Login'
 import { setMessageDisplay } from './notificationReducer'
 
-//Getting thne initial user value from the localStorage.
+//Getting the initial user value from the localStorage.
 const user = JSON.parse(window.localStorage.getItem('loggedUserData'))
 
 //Setting the initialState to user or null if a logged in user is not found.

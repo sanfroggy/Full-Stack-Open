@@ -79,7 +79,8 @@ const SingleBlog = ({ loggedUser }) => {
     /*If blog has a proper defined value the details of the blog are returned,
     along with a like button and a remove button if the user is the same that
     added the blog. If a blog no longer exists, but is still set as the blog to be displayed,
-    useNavigate is also used to take the user back to the "homepage". */
+    useNavigate is also used to take the user back to the "homepage". Also checking if
+    the blog has any comments and returning them also if it does. */
     if (blog) {
         return (
             <div>

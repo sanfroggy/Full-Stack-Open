@@ -63,9 +63,11 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 if the commented blog does not exist anymore, or given id is invalid,
 an appropriate error message is returned. */
 blogsRouter.post('/:id/comments', async (request, response) => {
+
+    console.log(request.body)
+
     const body = request.body
     const blog = await Blog.findById(request.params.id)
-    //const comments = await Comment.find({})
 
     const comment = new Comment({
         content: body.content,

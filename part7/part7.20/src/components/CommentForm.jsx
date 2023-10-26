@@ -1,10 +1,11 @@
-//Importing postComment function from blogReducer and useState and useDispatch hooks.
+/*Importing postComment function from blogReducer and useState and useDispatch hooks,
+as well as Form and Button components from react-bootstrap. */.
 import { postComment } from '../reducers/blogReducer'
 import { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 
-/*Defining a from used to write comments ín a single blog view. It contains
+/*Defining a from used to write comments Ã­n a single blog view. It contains
 an input field and a button to submit the form. */
 const CommentForm = ({ blogId }) => {
 

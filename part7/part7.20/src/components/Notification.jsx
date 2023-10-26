@@ -1,4 +1,4 @@
-//Importing the useSelector hook.
+//Importing the useSelector hook and Alert component from react-bootstrap.
 import { useSelector } from 'react-redux'
 import { Alert } from 'react-bootstrap'
 

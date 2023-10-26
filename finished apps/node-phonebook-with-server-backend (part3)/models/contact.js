@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 //Set up mongoose.
 mongoose.set('strictQuery', false)
 
-
 /*Get the password and the username strings from the MONGODB_URI enviromental variable and
 use EncodeURIComponent to ensure that special characters will be escaped correctly.
 Those string will be then used when forming a URL to connect to. */

@@ -1,3 +1,5 @@
+/*Importing necessary hooks. Also importing the CommentForm component and necessary action creators
+from blogReducer. */
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
@@ -81,7 +83,8 @@ const SingleBlog = ({ loggedUser }) => {
     along with a like button and a remove button if the user is the same that
     added the blog. If a blog no longer exists, but is still set as the blog to be displayed,
     useNavigate is also used to take the user back to the "homepage". Also checking if
-    the blog has any comments and returning them also if it does. */
+    the blog has any comments and returning them also if it does, as well as a
+    CommentForm component. */
     if (blog) {
         return (
             <div>

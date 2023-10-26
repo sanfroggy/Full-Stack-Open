@@ -1,5 +1,5 @@
 /*Importing necessary hooks. Also importing the CommentForm component and necessary action creators
-from blogReducer. */
+from blogReducer, as well as the Button component from react-bootstrap. */
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'

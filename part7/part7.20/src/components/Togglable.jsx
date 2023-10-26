@@ -1,5 +1,6 @@
 /*Importing the useState and useImperativeHandle hooks,
-as well as forwardRef function. Also importing prop-types. */
+as well as forwardRef function. Also importing prop-types
+and the Button component from react-bootstrap. */
 import { useState, useImperativeHandle, forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap'

@@ -1,5 +1,6 @@
 /*Importing the useEffect, useSelector and useDispatch hooks. Also
-importing the updateBlogsState function from blogReducer and Link component. */
+importing the updateBlogsState function from blogReducer and Link component,
+as well as Table component from react-bootstrap. */
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateBlogsState } from '../reducers/blogReducer'

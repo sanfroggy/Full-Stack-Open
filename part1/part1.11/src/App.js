@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-
 /*Check if feedback has been given using conditional rendering and if so, 
 show the calculated statistics in a HTML table*/
 const Statistics = (props) => {

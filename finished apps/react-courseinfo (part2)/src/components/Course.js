@@ -45,7 +45,7 @@ const Part = (props) => {
 const Total = (props) => {
 
     return (
-        <b>Total:  {props.total}</b>
+        <b> Total:  {props.total} </b>
     )
 }
 

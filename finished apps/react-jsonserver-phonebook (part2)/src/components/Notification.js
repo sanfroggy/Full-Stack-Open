@@ -23,7 +23,6 @@ const Notification = ({ message, isError }) => {
             )
         }
     }
-
 }
 
 export default Notification

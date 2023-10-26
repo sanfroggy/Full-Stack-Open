@@ -1,4 +1,4 @@
-/*Importing prop-types, as well as From and Button components
+/*Importing prop-types, as well as Form and Button components
 from react-bootstrap. */
 import PropTypes from 'prop-types'
 import { Form, Button } from 'react-bootstrap'

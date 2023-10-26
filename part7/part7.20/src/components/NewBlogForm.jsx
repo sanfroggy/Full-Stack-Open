@@ -1,4 +1,5 @@
-//Importing the useState hook and prop-types.
+/*Importing the useState hook and prop-types, as well as
+Form and Button components from react-bootstrap. */
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Button } from 'react-bootstrap'

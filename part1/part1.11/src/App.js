@@ -96,8 +96,8 @@ const App = () => {
             <Button handleClick={handleGood} text="Good" />
             <Button handleClick={handleNeutral} text="Neutral" />
             <Button handleClick={handleBad} text="Bad" />
-            <Statistics good={good} neutral={neutral} bad={bad} 
-            all={all} average={average} percentage={percentage} />
+            <Statistics good={good} neutral={neutral} bad={bad}
+                all={all} average={average.toFixed(2)} percentage={percentage.toFixed(2)} />
         </>
     )
 }

@@ -111,7 +111,8 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
     const user = request.user
     const id = blogToDelete.id
 
-    //Deleting all the Comment objects related to the blog to be deleted.
+    //Deleting all the Comment objects related to the blog to be deleted
+    from the MongoDB database.
     const comments = Comment.find({})
     await comments.deleteMany({ blog: id.toString()})
 

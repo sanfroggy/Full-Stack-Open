@@ -129,6 +129,10 @@ const resolvers = {
         author: (root) => authors.find(a => a.name === root.author)
     },
 
+    /*The bookCount field of the Author object is given a value
+    when responding to a query. The value is gotten by comparing 
+    the name string set as author in each book to the name field of
+    the root Author object. The length of the filtered array is the returned. */
     Author: {
         bookCount: (root) => {
             return books.filter(book => 

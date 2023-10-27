@@ -120,7 +120,7 @@ const resolvers = {
             authors.find(a => a.name === args.name),
 
         /*If allBooks contains arguments return an array filtered
-        using the author's name given as an argument. */
+        using the author's name or the genre given as an argument. */
         allBooks: (root, args) => {
 
             let filtered = books

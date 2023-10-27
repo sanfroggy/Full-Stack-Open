@@ -108,7 +108,8 @@ const typeDefs = `
     }`
 
 /*Defining resolvers for 2 querys designed to get the length
-of an array of objects. */
+of an array of objects, a query to find an author with a name
+passed as parameter and a query to return all Book objects. */
 const resolvers = {
     Query: {
         bookCount: () => books.length,
@@ -117,9 +118,12 @@ const resolvers = {
             authors.find(a => a.name === args.name),
         allBooks: () => books
     },
+    
+    /*The book object needs to find the Author object, with
+    the string given as value. Array.find is used to return an
+    object that has a matching name field value. */
     Book: {
         author: (root) => authors.find(a => a.name === root.author)
-
     }
 }
 

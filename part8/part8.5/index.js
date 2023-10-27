@@ -1,6 +1,7 @@
 //Importing Apollo server and a function to start a standalone server.
 const { ApolloServer } = require('@apollo/server')
 const { startStandaloneServer } = require('@apollo/server/standalone')
+const { v4: uuid } = require('uuid')
 
 //Defining an array of Author objects.
 let authors = [
@@ -107,12 +108,22 @@ const typeDefs = `
         allBooks(author: String, genre: String): [Book!]!
         findAuthor(name: String!): Author
         allAuthors: [Author!]!
+    }
+    
+    type Mutation {
+        addBook(
+            title: String!
+            author: String!
+            published: Int!
+            genres: [String!]!
+        ): Book
     }`
 
 /*Defining resolvers for 2 querys designed to get the length
 of an array of objects, a query to find an author with a name
 passed as parameter and a query to return all Book objects. */
 const resolvers = {
+
     Query: {
         bookCount: () => books.length,
         authorCount: () => authors.length,
@@ -125,12 +136,14 @@ const resolvers = {
 
             let filtered = books
 
-            if (args.genre) {
-                filtered = books.filter(b => b.genres.includes(args.genre))
-            }
             if (args.author) {
-                filtered = books.filter(b => b.author === args.author)
+                filtered = filtered.filter(b => b.author === args.author)
             }
+
+            if (args.genre) {
+                filtered = filtered.filter(b => b.genres.includes(args.genre))
+            }
+
             return filtered
         },
 
@@ -155,6 +168,14 @@ const resolvers = {
             
         },
     },
+
+    Mutation: {
+        addBook: (root, args) => {
+            const book = { ...args, id: uuid() }
+            books = books.concat(book)
+            return book
+        }
+    }
 }
 
 /*Defining a variable for the server with the defined variables

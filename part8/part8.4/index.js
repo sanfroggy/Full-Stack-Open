@@ -119,7 +119,7 @@ const resolvers = {
         findAuthor: (root, args) =>
             authors.find(a => a.name === args.name),
 
-        /*If all books contains arguments return an array filtered
+        /*If allBooks contains arguments return an array filtered
         using the author's name given as an argument. */
         allBooks: (root, args) => 
             args.author ? books.filter(b => b.author === args.author) : books,

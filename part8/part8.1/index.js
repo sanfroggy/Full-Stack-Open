@@ -1,6 +1,8 @@
+//Importing Apollo server and a function to start a standalone server.
 const { ApolloServer } = require('@apollo/server')
 const { startStandaloneServer } = require('@apollo/server/standalone')
 
+//Defining an array of Author objects.
 let authors = [
     {
         name: 'Robert Martin',
@@ -27,20 +29,7 @@ let authors = [
     },
 ]
 
-/*
- * Suomi:
- * Saattaisi olla järkevämpää assosioida kirja ja sen tekijä tallettamalla kirjan yhteyteen tekijän nimen sijaan tekijän id
- * Yksinkertaisuuden vuoksi tallennamme kuitenkin kirjan yhteyteen tekijän nimen
- *
- * English:
- * It might make more sense to associate a book with its author by storing the author's id in the context of the book instead of the author's name
- * However, for simplicity, we will store the author's name in connection with the book
- *
- * Spanish:
- * Podría tener más sentido asociar un libro con su autor almacenando la id del autor en el contexto del libro en lugar del nombre del autor
- * Sin embargo, por simplicidad, almacenaremos el nombre del autor en conección con el libro
-*/
-
+//Defining an array of Book objects.
 let books = [
     {
         title: 'Clean Code',
@@ -93,6 +82,9 @@ let books = [
     },
 ]
 
+/*Defining the object Schemas in a variable to be passed along to
+the server. Two schemas are defined to be the object models and
+one will define the query function implementations. */
 const typeDefs = `
     type Book {
         title: String!
@@ -113,6 +105,8 @@ const typeDefs = `
         authorCount: Int!
     }`
 
+/*Defining resolvers for 2 querys designed to get the length
+of an array of objects. */
 const resolvers = {
     Query: {
         bookCount: () => books.length,
@@ -121,12 +115,14 @@ const resolvers = {
 
 }
 
-
+/*Defining a variable for the server with the defined variables
+for the schemas and the resolver functions. */
 const server = new ApolloServer({
     typeDefs,
     resolvers,
 })
 
+//Starting the server at port 4000.
 startStandaloneServer(server, {
     listen: { port: 4000 },
 }).then(({ url }) => {

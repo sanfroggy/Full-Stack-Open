@@ -156,6 +156,7 @@ const resolvers = {
 
             return filtered
         },
+        
         allAuthors: () => authors
     },
 

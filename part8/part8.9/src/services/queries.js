@@ -11,6 +11,7 @@ export const ALL_AUTHORS = gql`
         }
     }`
 
+//Defining a query to get all books from the backend.
 export const ALL_BOOKS = gql`
     query {
         allBooks {

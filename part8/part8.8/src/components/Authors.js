@@ -31,7 +31,7 @@ const Authors = () => {
           </tr>
           {authors.map((a) => (
             <tr key={a.name}>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{a.name}</td>
+                  <td>{a.name}</td>
                   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{a.born}</td>
                   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{a.bookCount}</td>

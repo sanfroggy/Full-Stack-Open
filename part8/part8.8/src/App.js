@@ -6,7 +6,7 @@ import NewBook from './components/NewBook'
 
 const App = () => {
 
-
+  //Returning Links and Routes used for page navigation.
   return (
     <div>
       <div>

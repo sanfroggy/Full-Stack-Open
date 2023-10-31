@@ -18,9 +18,9 @@ const NewBook = () => {
   const [genres, setGenres] = useState([])
 
   /*Defining a variable for the useMutation hook and making it
-  also refetch the books and authors, when used to add a new book. */
+  also refetch the authors, when used to add a new book. */
   const [createBook] = useMutation(ADD_BOOK, {
-    refetchQueries: [{ query: ALL_BOOKS }, { query: ALL_AUTHORS }]
+    refetchQueries: [{ query: ALL_AUTHORS }]
   })
 
   /*Defining a method to empty the input fields

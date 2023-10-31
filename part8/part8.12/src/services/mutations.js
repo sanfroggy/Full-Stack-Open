@@ -21,6 +21,7 @@ export const ADD_BOOK = gql`
         }
     }
 `
+
 /*Defining and exporting a mutation used to update an author's birthyear
 in the backend. The updated object is then returned. */
 export const EDIT_AUTHOR = gql`

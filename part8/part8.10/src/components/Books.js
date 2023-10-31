@@ -9,7 +9,9 @@ const Books = () => {
 
   /*Using the useQuery hook to get all book objects 
   from backend. */
-  const result = useQuery(ALL_BOOKS)
+  const result = useQuery(ALL_BOOKS, {
+        pollInterval: 500
+  })
 
   if (result.loading) {
     return <div>Loading...</div>

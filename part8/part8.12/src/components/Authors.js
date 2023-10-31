@@ -41,8 +41,8 @@ const Authors = () => {
 
   /*Returning an html table with the name, birthyear and book written
   by each author object in the authors array. Also returning a form with
-  input fields and a submit button, enabling the user to change
-  san author's year of birth. */
+  a select (dropdown) menu to choose from existing users and a submit button, 
+  enabling the user to change an author's year of birth. */
   return (
     <div>
       <h2>Authors: </h2>

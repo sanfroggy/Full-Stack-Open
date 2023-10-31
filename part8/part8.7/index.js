@@ -84,8 +84,9 @@ let books = [
 ]
 
 /*Defining the object Schemas in a variable to be passed along to
-the server. Two schemas are defined to be the object models and
-one will define the query function implementations. */
+the server. Two schemas are defined to be the object models,
+one will define the query function implementations and two more define
+implementations of mutations to add and to edit data. */
 const typeDefs = `
     type Author {
         name: String!
@@ -129,7 +130,8 @@ const typeDefs = `
 /*Defining resolvers for 2 querys designed to get the length
 of an array of objects, a query to find an author with a name
 passed as parameter and a query to return all Book objects. Also defining
-a mutation to create a new Book object entry.*/
+a mutation to create a new Book object entry and one to edit the birthyear
+of an Author.*/
 const resolvers = {
 
     Query: {
@@ -212,6 +214,10 @@ const resolvers = {
             }
         },
 
+        /*Defining a mutation te check if an authpr with the name received as an 
+        argument exists and if it doesn't null is returned. If it does however
+        the value of te born field of the author is replaced by the setBornTo
+        received as an argument. */
         editAuthor: (root, args) => {
 
             const oldAuthor = authors.find(a => a.name === args.name)

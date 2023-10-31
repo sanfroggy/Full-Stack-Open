@@ -121,7 +121,8 @@ const typeDefs = `
 
 /*Defining resolvers for 2 querys designed to get the length
 of an array of objects, a query to find an author with a name
-passed as parameter and a query to return all Book objects. */
+passed as parameter and a query to return all Book objects. Also defining
+a mutation to create a new Book object entry.*/
 const resolvers = {
 
     Query: {
@@ -169,6 +170,9 @@ const resolvers = {
         },
     },
 
+    /*Defining a mutation to create a new Book object. If
+    the author can be found in the array of authors, it is returned.
+    If not, a new author object is created and added to the array. */
     Mutation: {
         addBook: (root, args) => {
             if (!authors.find(a => a.name === args.author)) {

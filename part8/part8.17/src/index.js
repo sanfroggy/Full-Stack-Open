@@ -5,7 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-
+/*Defining a value for the authorization header using the
+imported setContext function. If a user has logged in and a
+token exists in localStorage the value is set to that of the token.
+If not it is set to null. */
 const authLink = setContext((_, { headers }) => {
     const token = localStorage.getItem('libraryUserToken')
     return {

@@ -160,10 +160,6 @@ const resolvers = {
         },
     },
 
-    /*The book object needs to find the Author object, with
-    the string given as value. Array.find is used to return an
-    object that has a matching name field value. */
-
     /*The bookCount field of the Author object is given a value
     when responding to a query. The value is gotten by comparing 
     the id string set as author in each book to the id field of

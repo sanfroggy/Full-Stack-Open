@@ -1,5 +1,5 @@
 /*Importing Apollo server, a function to start a standalone server, dotenv library
-mongoose and the mongoose models for Book and Author objects. */
+mongoose, jsonwebtoken and the mongoose models for Book, User and Author objects. */
 const { ApolloServer } = require('@apollo/server')
 const { startStandaloneServer } = require('@apollo/server/standalone')
 const { GraphQLError } = require('graphql')

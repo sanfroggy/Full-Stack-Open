@@ -140,10 +140,10 @@ const typeDefs = `
 
 /*Defining resolvers for 2 querys designed to get the length
 of a collection of odocuments in the database, 
-a query to find an author with a name passed as parameter and a query 
-to return all Book and all Author objects. 
-Also defining a mutation to create a new User object entry, a new Book object entry, 
-one to login and one to edit the birthyear of an Author.*/
+a query to find an author with a name passed as parameter, a query to
+get the currently logged in user and a query to return all Book and 
+all Author objects. Also defining a mutation to create a new User object entry,
+a new Book object entry, one to login and one to edit the birthyear of an Author.*/
 const resolvers = {
 
     Query: {

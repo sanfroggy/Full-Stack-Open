@@ -1,4 +1,5 @@
-/*Importing Apollo server, a function to start a standalone server. */
+/*Importing Apollo server, a function to start a standalone server, dotenv library
+mongoose and the mongoose Schemas for Book and Author objects. */
 const { ApolloServer } = require('@apollo/server')
 const { startStandaloneServer } = require('@apollo/server/standalone')
 require('dotenv').config()

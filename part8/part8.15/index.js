@@ -258,6 +258,8 @@ const resolvers = {
 
             const oldAuthor = await Author.findOne({ name: args.name })
 
+            /*If an author is not found with the name given as a parameter
+            a GraphQLError is thrown. Otherwise the number of that author is updated. */
             if (!oldAuthor) {
                 throw new GraphQLError('Invalid author name provided. Author does not exist. ', {
                     extensions: {

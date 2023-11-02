@@ -33,7 +33,6 @@ const App = () => {
 
    }
 
-
   /*Returning Links and Routes for page navigation and a Notification component to
   display an error message when necessary. */
   return (

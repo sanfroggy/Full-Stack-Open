@@ -4,7 +4,6 @@ import { useMutation } from '@apollo/client'
 import { useState, useEffect } from 'react'
 import { LOGIN } from '../services/mutations'
 import { useNavigate } from 'react-router-dom'
-import { useApolloClient } from '@apollo/client'
 
 /*Defining a component to enable the user to login with a 
 username and password. */
@@ -20,7 +19,6 @@ const LoginForm = ({ setToken, setMessage }) => {
     /*Defining the use of the login mutation. If the mutation is
     unsuccessful an error message is shown. */
     const [login, result] = useMutation(LOGIN, {
-        //refetchQueries: [{ query: ME }],
         onError: (error) => {
             setMessage(error.message)
 

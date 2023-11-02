@@ -25,6 +25,8 @@ export const ALL_BOOKS = gql`
         }
     }`
 
+/*Defining a query to get the currently logged in user from 
+the backend. */
 export const ME = gql`
     query {
         me {

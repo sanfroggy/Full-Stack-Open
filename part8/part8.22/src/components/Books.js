@@ -71,11 +71,6 @@ const Books = () => {
         display: 'inline-block'
     }
 
-    /*const setSelectedGenre = (genre) => {
-        setGenre(genre)
-        setBooks(resultWithGenre.data.allBooks)
-    }*/
-
   /*Returning an html table with the title, author and year of
   publication of each book object in books array. Also returning
   a button for each existing genre to filter books shown. */

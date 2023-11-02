@@ -71,7 +71,8 @@ const Books = () => {
     }
 
   /*Returning an html table with the title, author and year of
-  publication of each book object in books array. */
+  publication of each book object in books array. Also returning
+  a button for each existing genre to filter books shown. */
   return (
     <div>
       <h2>Books:</h2>

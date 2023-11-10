@@ -35,7 +35,7 @@ const wsLink = new GraphQLWsLink(
     createClient({ url: 'ws://localhost:4000' })
 )
 
-
+//Using splitLink to use the http-, and the websocket connection.
 const splitLink = split(
     ({ query }) => {
         const definition = getMainDefinition(query)

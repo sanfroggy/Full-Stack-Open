@@ -31,7 +31,8 @@ const App = () => {
             ${data.data.bookAdded.author.name} was
             recently added to the list of books.`)
 
-
+            /*Updating the client cache as the book is added, so that the new book 
+            is rendered immediately. */
             client.cache.updateQuery({ query: ALL_BOOKS }, ({ allBooks }) => {
                 return {
                     allBooks: allBooks.concat(data.data.bookAdded),

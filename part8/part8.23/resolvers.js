@@ -247,6 +247,9 @@ const resolvers = {
             }
         }
     },
+
+    /*Defining a subscription bookAdded used to notify clients 
+    when a book is added and send the data of the new book. */
     Subscription: {
         bookAdded: {
             subscribe: () => pubsub.asyncIterator('BOOK_ADDED')

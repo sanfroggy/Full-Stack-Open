@@ -14,7 +14,8 @@ const getAll = () => {
     return request.then(response => response.data)
 }
 
-//Defining a function to set the value of the token variable.
+/*Defining a function to set the value of the token variable to a
+received value. */
 const setToken = newToken => {
 
     token = `Bearer ${newToken}`

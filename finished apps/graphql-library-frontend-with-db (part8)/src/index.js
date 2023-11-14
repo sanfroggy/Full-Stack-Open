@@ -19,6 +19,8 @@ const authLink = setContext((_, { headers }) => {
     }
 })
 
+/*Defining a variable for an http link created using the
+createHttpLink function. */
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000',
 })

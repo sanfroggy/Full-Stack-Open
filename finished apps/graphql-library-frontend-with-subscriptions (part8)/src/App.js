@@ -54,7 +54,6 @@ const App = () => {
             client.resetStore()
             navigate('/login')
         }, [])
-
    }
 
   /*Returning Links and Routes for page navigation and a Notification component to

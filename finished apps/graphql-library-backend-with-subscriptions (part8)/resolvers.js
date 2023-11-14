@@ -45,7 +45,6 @@ const resolvers = {
                 filtered = filtered.filter(b => b.author.name === args.author)
                 return filtered.filter(b => b.genres.includes(args.genre) ? b : null)
             }
-
             return await Book.find({}).populate('author', { name: 1, born: 1 })
         },
 

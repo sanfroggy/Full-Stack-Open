@@ -75,7 +75,6 @@ for (i = 0; i < pwdindex; i++) {
 
 //Form an URI to connect by using the different strings.
 const MONGODB_URI = `${usrstring}${encodedstring}@${splitsecond[pwdindex]}`
-
 console.log('connecting to', MONGODB_URI)
 
 mongoose.connect(MONGODB_URI)

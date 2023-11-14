@@ -8,7 +8,6 @@ const Book = require('./models/book')
 const Author = require('./models/author')
 const User = require('./models/user')
 const jwt = require('jsonwebtoken')
-
 require('dotenv').config()
 
 mongoose.set('strictQuery', false)
@@ -225,7 +224,7 @@ const resolvers = {
         login: async (root, args) => {
             const user = await User.findOne({ username: args.username })
 
-            if (!user || args.password !== 'secret123') {
+            if (!user || args.password !== 'secret') {
                 throw new GraphQLError('Invalid username or password', {
                     extensions: {
                         code: 'BAD_USER_INPUT'

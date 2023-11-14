@@ -13,7 +13,7 @@ const useCountry = (name) => {
     const [country, setCountry] = useState(null)
 
     /*Using the useEffect hook to search for a country from the API, 
-    whenever the variable name is changed. */
+    whenever the variable name is changed. Search is case insensitive. */
     useEffect(() => {
         const request = axios.get(baseUrl)
         const response = request.then(response => {

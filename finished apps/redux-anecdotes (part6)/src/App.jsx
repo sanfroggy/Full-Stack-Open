@@ -1,5 +1,7 @@
-/*Importing the useSelector, useDispatch hooks, "action creators" and the form
-used to create a new anecdote. */
+/*Importing the useEffect, useDispatch hooks, "action creators", the form
+used to create a new anecdote, the component containing the list of anecdotes.
+Filter and Notification components as well as the function to initialize the
+state of anecdotes. */
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import AnecdoteForm from './components/AnecdoteForm'

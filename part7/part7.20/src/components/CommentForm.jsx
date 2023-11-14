@@ -1,5 +1,5 @@
 /*Importing postComment function from blogReducer and useState and useDispatch hooks,
-as well as Form and Button components from react-bootstrap. */.
+as well as Form and Button components from react-bootstrap. */
 import { postComment } from '../reducers/blogReducer'
 import { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'

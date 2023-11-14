@@ -27,8 +27,8 @@ const NewBook = () => {
   and reset the state variables when a new book
   is being created. */
   const submit = async (event) => {
+    
     event.preventDefault()
-
     createBook({ variables: {title, author, published, genres} })
 
     setTitle('')

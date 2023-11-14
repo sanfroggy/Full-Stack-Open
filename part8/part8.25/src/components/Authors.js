@@ -56,7 +56,6 @@ const Authors = ({ token, setMessage }) => {
   if (result.loading) {
     return <div><br />Loading...<br /></div>
   }
-
   let authors = [...result.data.allAuthors]
 
 

@@ -87,7 +87,6 @@ blogsRouter.post('/:id/comments', async (request, response) => {
             blog.comments = blog.comments.concat(savedComment._id)
             await blog.save()
         }
-
         response.status(201).json(savedComment)
     } else {
         response

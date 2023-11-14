@@ -18,7 +18,6 @@ const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
 
 require('dotenv').config()
-
 mongoose.set('strictQuery', false)
 
 /*Get the password and the username strings from the MONGODB_URI enviromental variable and
